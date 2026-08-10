@@ -25,7 +25,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 // ===== SCROLL REVEAL =====
-const revealEls = document.querySelectorAll('.feature-card, .offer-card');
+const revealEls = document.querySelectorAll('.feature-card, .offer-card, .gallery-item');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -56,53 +56,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ===== FORM SUBMIT (WhatsApp) =====
-// Le formulaire construit un message et l'ouvre pre-rempli dans WhatsApp
-// vers le numero de l'equipe. Aucune cle API, fonctionne sur tout hebergement.
-const WHATSAPP_NUMBER = '213770871850';
-
+// ===== FORM SUBMIT (Netlify Forms) =====
 const contactForm = document.getElementById('contactForm');
-const offreSelect = document.getElementById('offreSelect');
-const formStatus = document.getElementById('formStatus');
-
-// Pré-sélectionne l'offre quand le client clique sur "Choisir {OFFRE}"
-document.querySelectorAll('.offer-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const offer = btn.closest('.offer-card')?.querySelector('h3')?.textContent.trim();
-    if (offer && offreSelect) {
-      offreSelect.value = offer;
-    }
-  });
-});
-
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  formStatus.textContent = '';
-  formStatus.style.color = '';
-
-  const nom = document.getElementById('contactNom').value.trim();
-  const email = document.getElementById('contactEmail').value.trim();
-  const tel = document.getElementById('contactTel').value.trim();
-  const offre = offreSelect.value;
-  const message = document.getElementById('contactMsg').value.trim();
-
-  if (!offre) {
-    formStatus.textContent = 'Veuillez choisir une offre.';
-    formStatus.style.color = '#fca5a5';
-    return;
+  const btn = contactForm.querySelector('button[type="submit"]');
+  const original = btn.textContent;
+  btn.textContent = 'Envoi en cours…';
+  btn.style.pointerEvents = 'none';
+  try {
+    const resp = await fetch('/', {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (resp.ok) {
+      btn.textContent = '✓ Message envoyé !';
+      contactForm.reset();
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.style.pointerEvents = '';
+      }, 3000);
+    } else {
+      throw new Error('Erreur serveur');
+    }
+  } catch (err) {
+    btn.textContent = '✗ Échec. Réessayez.';
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.style.pointerEvents = '';
+    }, 3000);
   }
-
-  let text = `Bonjour ATLASMEDICA,\n`;
-  text += `Je souhaite des informations pour l'offre *${offre}*.\n\n`;
-  text += `Nom : ${nom}\n`;
-  text += `Email : ${email}\n`;
-  if (tel) text += `Téléphone : ${tel}\n`;
-  if (message) text += `\nMessage : ${message}`;
-
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-  formStatus.textContent = 'Ouverture de WhatsApp…';
-  formStatus.style.color = '#86efac';
-  window.open(url, '_blank');
 });
 
 // ===== COUNTER ANIMATION =====
@@ -129,3 +113,31 @@ const statObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 stats.forEach(s => statObserver.observe(s));
+
+// ===== LIGHTBOX (GALERIE) =====
+const lightbox = document.createElement('div');
+lightbox.className = 'lightbox';
+lightbox.innerHTML = `
+  <button class="lightbox-close" aria-label="Fermer">&times;</button>
+  <img alt="">
+  <div class="lightbox-caption"></div>
+`;
+document.body.appendChild(lightbox);
+const lbImg = lightbox.querySelector('img');
+const lbCap = lightbox.querySelector('.lightbox-caption');
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault();
+    lbImg.src = item.href;
+    lbCap.textContent = item.dataset.caption || '';
+    lightbox.classList.add('open');
+  });
+});
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox || e.target.classList.contains('lightbox-close')) {
+    lightbox.classList.remove('open');
+  }
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') lightbox.classList.remove('open');
+});

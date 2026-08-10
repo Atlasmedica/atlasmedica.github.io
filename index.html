@@ -19,6 +19,7 @@
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#features">Fonctionnalités</a></li>
+        <li><a href="#gallery">Galerie</a></li>
         <li><a href="#offers">Offres</a></li>
         <li><a href="#demo">Démo</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -48,22 +49,14 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="hero-app-mockup">
-          <div class="mockup-screen">
-            <div class="mockup-sidebar"></div>
-            <div class="mockup-main">
-              <div class="mockup-header"></div>
-              <div class="mockup-card"></div>
-              <div class="mockup-row"></div>
-              <div class="mockup-row"></div>
-            </div>
-          </div>
-          <div class="mockup-float-card card-1">
+        <div class="hero-photo-wrap">
+          <img src="assets/pub1.png" alt="Médecin — ATLASMEDICA" class="hero-photo">
+          <div class="hero-float-card card-1">
             <i class="fas fa-user-md"></i>
             <span>Patient suivi</span>
             <strong>M. Ali</strong>
           </div>
-          <div class="mockup-float-card card-2">
+          <div class="hero-float-card card-2">
             <i class="fas fa-heartbeat"></i>
             <span>Signes vitaux</span>
             <strong>12.4 / 8.2</strong>
@@ -113,6 +106,11 @@
           <h3>Scores Cliniques</h3>
           <p>EVA, Glasgow, CRB-65, SpO₂, glycémie — calculs automatiques.</p>
         </div>
+        <div class="feature-card" data-delay="450">
+          <div class="feature-icon" style="--icn:#0ea5e9"><i class="fas fa-flask"></i></div>
+          <h3>Calculs biologiques instantanés</h3>
+          <p>Clearance de la créatinine (DFG MDRD), HOMA-IR, bilans glycémique, lipidique, rénal, hépatique et inflammatoire — résultats et stades calculés automatiquement.</p>
+        </div>
         <div class="feature-card" data-delay="500">
           <div class="feature-icon" style="--icn:#7c3aed"><i class="fas fa-file-medical"></i></div>
           <h3>Certificats</h3>
@@ -143,6 +141,26 @@
           <h3>Aide au diagnostic</h3>
           <p>117 arbres décisionnels interactifs, base de connaissances CIM-10 (180+ entrées), alertes et suggestions cliniques.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Aperçu</span>
+        <h2>Découvrez <span class="gradient-text">l'application</span></h2>
+        <p>Captures réelles de l'interface ATLASMEDICA : tableau de bord, patients, consultations, rendez-vous et paramètres.</p>
+      </div>
+      <div class="gallery-grid">
+        <a href="assets/screenshots/main_window1.png" class="gallery-item" data-caption="Tableau de bord"><img src="assets/screenshots/main_window1.png" alt="Tableau de bord" loading="lazy"></a>
+        <a href="assets/screenshots/main_window2.png" class="gallery-item" data-caption="Tableau de bord — vue d'ensemble"><img src="assets/screenshots/main_window2.png" alt="Vue d'ensemble" loading="lazy"></a>
+        <a href="assets/screenshots/patient_view.png" class="gallery-item" data-caption="Fiche patient"><img src="assets/screenshots/patient_view.png" alt="Fiche patient" loading="lazy"></a>
+        <a href="assets/screenshots/Rendez-vous.png" class="gallery-item" data-caption="Rendez-vous & calendrier"><img src="assets/screenshots/Rendez-vous.png" alt="Rendez-vous" loading="lazy"></a>
+        <a href="assets/screenshots/consult1.png" class="gallery-item" data-caption="Consultation"><img src="assets/screenshots/consult1.png" alt="Consultation" loading="lazy"></a>
+        <a href="assets/screenshots/parametres.png" class="gallery-item" data-caption="Paramètres"><img src="assets/screenshots/parametres.png" alt="Paramètres" loading="lazy"></a>
+        <a href="assets/screenshots/login.png" class="gallery-item" data-caption="Connexion"><img src="assets/screenshots/login.png" alt="Connexion" loading="lazy"></a>
       </div>
     </div>
   </section>
@@ -196,6 +214,7 @@
             <li><i class="fas fa-check-circle"></i> Tout BASE</li>
             <li><i class="fas fa-check-circle"></i> Scores cliniques (EVA, Glasgow, CRB-65)</li>
             <li><i class="fas fa-check-circle"></i> Signes vitaux complets</li>
+            <li><i class="fas fa-check-circle"></i> Calculs biologiques instantanés (clearance créatinine, DFG MDRD, HOMA-IR)</li>
             <li><i class="fas fa-check-circle"></i> Référentiel médicaments</li>
             <li><i class="fas fa-check-circle"></i> Prescriptions avec posologie & DCI</li>
             <li><i class="fas fa-check-circle"></i> QR code patient (pathologies + traitements)</li>
@@ -263,7 +282,7 @@
           <div class="offer-header">
             <span class="offer-tag">Sur Mesure</span>
             <h3>FULL CONTROL</h3>
-            <div class="offer-price"><span class="price">150 000</span><span class="currency"> DA<small> unique</small></span></div>
+            <div class="offer-price"><span class="price">120 000</span><span class="currency"> DA<small> unique</small></span></div>
             <p class="offer-desc">Solution clé en main avec site web personnalisé</p>
           </div>
           <ul class="offer-features">
@@ -319,6 +338,7 @@
             <tr class="divider"><td colspan="6"></td></tr>
             <tr><td>Scores cliniques (EVA, Glasgow, CRB-65)</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
             <tr><td>Signes vitaux complets</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
+            <tr><td>Calculs biologiques (clearance créatinine, DFG MDRD, HOMA-IR)</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
             <tr><td>Référentiel médicaments</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
             <tr><td>Prescriptions posologie/DCI</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
             <tr><td>QR code patient</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
