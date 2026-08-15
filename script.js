@@ -25,7 +25,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 // ===== SCROLL REVEAL =====
-const revealEls = document.querySelectorAll('.feature-card, .offer-card, .gallery-item');
+const revealEls = document.querySelectorAll('.feature-card, .offer-card, .gallery-item, .video-wrap');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
