@@ -65,7 +65,7 @@ contactForm.addEventListener('submit', async (e) => {
   btn.textContent = 'Envoi en cours…';
   btn.style.pointerEvents = 'none';
   try {
-    const resp = await fetch('/', {
+    const resp = await fetch('https://atlasmedica.netlify.app/', {
       method: 'POST',
       body: new FormData(contactForm),
       headers: { 'Accept': 'application/json' }
