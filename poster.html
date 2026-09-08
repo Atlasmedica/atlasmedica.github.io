@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATLASMEDICA — Affiche</title>
+<meta name="description" content="ATLASMEDICA : gestion de cabinet, dossier patient & QR, IA et téléconsultation. Conçu par des médecins pour des médecins.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#04070f;--text:#f4f7fb;--muted:#8b95a7;--dim:#5b6472;
+  --cyan:#22d3ee;--blue:#3b82f6;--violet:#8b5cf6;--amber:#fbbf24;
+  --border:rgba(255,255,255,.09);
+  --grad:linear-gradient(90deg,#3b82f6,#22d3ee);
+  --grad2:linear-gradient(120deg,#22d3ee,#8b5cf6);
+}
+html,body{height:100%}
+body{
+  font-family:'Inter',system-ui,sans-serif;background:radial-gradient(120% 100% at 50% 0%,#0a1224 0%,var(--bg) 60%);
+  color:var(--text);display:grid;justify-items:center;padding:16px;overflow-x:hidden;min-height:100dvh;
+}
+.stage{
+  position:relative;width:100%;max-width:430px;min-height:min(94dvh,880px);overflow:hidden;border-radius:28px;
+  border:1px solid rgba(255,255,255,.1);box-shadow:0 40px 100px -30px rgba(0,0,0,.95),0 0 0 1px rgba(34,211,238,.05),inset 0 1px 0 rgba(255,255,255,.06);
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  background:
+    radial-gradient(130% 90% at 50% -12%,#12203f 0%,#080d1c 48%,#0a0f1f 100%);
+  padding:6.5% 7.5% 5%;
+}
+/* watermark brand */
+.wm{position:absolute;right:-6%;bottom:-14%;z-index:0;font:800 21rem 'Sora';color:transparent;-webkit-text-stroke:1px rgba(59,130,246,.10);pointer-events:none;user-select:none;line-height:1}
+/* glow orbs */
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0}
+.orb-b{width:340px;height:340px;background:radial-gradient(circle,#1d4ed8,transparent 70%);top:-140px;left:-120px;opacity:.55;animation:drift1 10s ease-in-out infinite alternate}
+.orb-v{width:300px;height:300px;background:radial-gradient(circle,#7c3aed,transparent 70%);bottom:-140px;right:-110px;opacity:.5;animation:drift2 12s ease-in-out infinite alternate-reverse}
+.orb-c{width:190px;height:190px;background:radial-gradient(circle,#0e7490,transparent 70%);top:30%;left:56%;opacity:.4;animation:drift3 14s ease-in-out infinite alternate}
+@keyframes drift1{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,30px) scale(1.12)}}
+@keyframes drift2{from{transform:translate(0,0) scale(1)}to{transform:translate(-40px,-20px) scale(1.1)}}
+@keyframes drift3{from{transform:translate(0,0)}to{transform:translate(-30px,20px) scale(1.2)}}
+/* dust particles */
+#fx{position:absolute;inset:0;z-index:1;pointer-events:none}
+
+.poster{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;flex:1;width:100%}
+.a{opacity:0;animation:fadeUp .8s cubic-bezier(.16,.84,.44,1) forwards}
+.a1{animation-delay:.15s}.a2{animation-delay:.3s}.a3{animation-delay:.45s}.a4{animation-delay:.6s}.a5{animation-delay:.75s}.a6{animation-delay:.9s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* badge */
+.badge{display:inline-flex;align-items:center;gap:.5rem;font:700 .56rem 'Sora';letter-spacing:.22em;text-transform:uppercase;color:#a8e9fb;
+  border:1px solid rgba(34,211,238,.28);background:linear-gradient(90deg,rgba(34,211,238,.10),rgba(139,92,246,.10));padding:.34rem .85rem;border-radius:999px;margin-top:1.2%}
+.b-dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 0 rgba(34,211,238,.7);animation:ping 2.2s cubic-bezier(0,0,.2,1) infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(34,211,238,.6)}70%{box-shadow:0 0 0 10px rgba(34,211,238,0)}100%{box-shadow:0 0 0 0 rgba(34,211,238,0)}}
+
+/* emblem */
+.emblem{position:relative;width:118px;height:118px;margin-top:5%;display:grid;place-items:center}
+.halo{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(34,211,238,.35)}
+.halo::before{content:"";position:absolute;inset:6px;border-radius:50%;border:1px dashed rgba(139,92,246,.35);animation:spin 16s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.halo.h2{inset:-14px;border:1px solid rgba(139,92,246,.18)}
+.halo.h2::after{content:"";position:absolute;top:-3px;left:50%;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:spin 8s linear infinite reverse}
+.em{
+  position:relative;width:76px;height:76px;border-radius:22px;display:grid;place-items:center;
+  background:linear-gradient(135deg,#2563eb,#0ea5e9 55%,#8b5cf6);color:#05101f;font:800 2rem 'Sora';
+  box-shadow:0 18px 50px -10px rgba(34,211,238,.55),inset 0 1px 0 rgba(255,255,255,.35);
+}
+.em::before{content:"";position:absolute;inset:-8px;border-radius:27px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(160deg,rgba(255,255,255,.12),transparent 55%);z-index:-1;filter:blur(2px)}
+
+/* wordmark */
+.word{font:800 clamp(1.9rem,8vw,2.5rem) 'Sora';letter-spacing:.01em;margin-top:4.5%;line-height:1.05}
+.word .g{background:linear-gradient(120deg,#60a5fa,#22d3ee 35%,#a78bfa 70%,#60a5fa);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:220% center}}
+.word .med{color:#fff}
+.tag{color:var(--muted);font-size:.86rem;margin-top:.7rem;max-width:30ch}
+
+/* ecg */
+.ecg-wrap{width:100%;margin:5.5% 0 5%;opacity:.9}
+.ecg{fill:none;stroke:url(#ecgG);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:640;stroke-dashoffset:640;animation:ecg 3.2s linear infinite}
+@keyframes ecg{0%{stroke-dashoffset:640}60%{stroke-dashoffset:0}82%{stroke-dashoffset:0}85%{stroke-dashoffset:640}100%{stroke-dashoffset:640}}
+@keyframes ecgGlow{0%,100%{opacity:.5}50%{opacity:1}}
+
+/* stats */
+.stats{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 0;width:117.65%;margin-left:-8.82%;margin-right:-8.82%}
+.st{width:calc((100% - 1.9rem)/5);background:linear-gradient(170deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:16px;padding:1rem .2rem;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;container-type:inline-size}
+.st:nth-child(-n+4){width:calc((100% - 1.9rem)/4)}
+.st b{display:block;max-width:100%;font:800 clamp(.8rem,28cqw,1.45rem) 'Sora';background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.st small{display:block;max-width:100%;color:#cdd6e4;font-size:clamp(.45rem,13.5cqw,.82rem);font-weight:600;margin-top:.3rem;line-height:1.15}
+
+/* rotor (transition en fondu comme promo) */
+.rotor{position:relative;width:100%;min-height:128px;margin-top:6%}
+.rot-panel{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;text-align:center;
+  background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:18px;padding:1rem;
+  opacity:0;transition:opacity .8s ease;pointer-events:none;
+}
+.rot-panel.on{opacity:1}
+.rot-panel .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:1.2rem}
+.rot-panel b{display:block;font:600 .86rem 'Sora'}
+.rot-panel small{color:var(--muted);font-size:.7rem;max-width:32ch;line-height:1.4}
+.rot-dots{display:flex;gap:.35rem;justify-content:center;margin-top:.85rem}
+.rot-dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);transition:all .3s}
+.rot-dots i.on{background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+
+/* cta */
+.spacer{flex:1;min-height:1.5rem}
+.link-gh{margin-top:.6rem;font:600 .8rem 'Sora';color:#67e8f9;text-decoration:none;border-bottom:1px dashed rgba(34,211,238,.5);padding-bottom:2px}
+.link-gh:active{color:#a5f3fc}
+.footer{color:var(--dim);font-size:.58rem;letter-spacing:.05em;margin-top:.85rem;line-height:1.6}
+.footer b{color:#7dd3fc;font-weight:600}
+/* desktop preview : étire la carte et agrandit tout pour rester lisible */
+@media (min-width:700px){
+  html{font-size:clamp(16px,2.6vw,30px)}
+  body{align-items:center}
+  .stage{max-width:min(600px,64vw)}
+}
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <span class="wm">A</span>
+  <div class="orb orb-b"></div><div class="orb orb-v"></div><div class="orb orb-c"></div>
+  <canvas id="fx"></canvas>
+
+  <div class="poster">
+    <span class="badge a a1"><span class="b-dot"></span>Nouveau · v1.2.3 · Algérie</span>
+
+    <div class="emblem a a2">
+      <span class="halo h1"></span>
+      <span class="halo h2"></span>
+      <span class="em">A</span>
+    </div>
+
+    <h1 class="word a a3">ATLAS<span class="g">MEDICA</span></h1>
+    <p class="tag a a3">Le logiciel médical qui simplifie votre quotidien.</p>
+
+    <div class="ecg-wrap a a4">
+      <svg viewBox="0 0 400 44" preserveAspectRatio="none" style="display:block;width:100%;height:34px">
+        <defs><linearGradient id="ecgG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3b82f6"/><stop offset=".55" stop-color="#22d3ee"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
+        <path class="ecg" d="M0,22 H118 L134,8 L150,36 L166,22 H258 L274,10 L290,30 L306,22 H400"/>
+      </svg>
+    </div>
+
+    <div class="stats a a4">
+      <div class="st"><b data-n="190" data-s="+">0</b><small>CIM-10</small></div>
+      <div class="st"><b data-n="15" data-s="+">0</b><small>arbres</small></div>
+      <div class="st"><b data-n="24">0</b><small>scores</small></div>
+      <div class="st"><b data-n="4000" data-s="+">0</b><small>médicaments</small></div>
+      <div class="st"><b>∞</b><small>pathologies</small></div>
+      <div class="st"><b data-n="18">0</b><small>coloris</small></div>
+      <div class="st"><b data-n="3">0</b><small>langues</small></div>
+      <div class="st"><b>1</b><small>messagerie</small></div>
+      <div class="st"><b>1</b><small>QR codes</small></div>
+    </div>
+
+    <div class="rotor a a5">
+      <div class="rot-panel on"><span class="ic c-blue">📅</span><b>Gestion de cabinet</b><small>Rendez-vous, file d'attente & facturation.</small></div>
+      <div class="rot-panel"><span class="ic c-cyan">👥</span><b>Dossier patient & QR</b><small>Antécédents + résumé instantané par QR code.</small></div>
+      <div class="rot-panel"><span class="ic c-violet">🤖</span><b>IA diagnostique</b><small>Différentiel argumenté, red flags, CIM-10.</small></div>
+      <div class="rot-panel"><span class="ic c-green">🎥</span><b>Téléconsultation</b><small>Lien sécurisé, le patient n'installe rien.</small></div>
+      <div class="rot-panel"><span class="ic c-blue">💰</span><b>Essai gratuit 30 jours</b><small>Abonnement simple ou licence à vie.</small></div>
+    </div>
+    <div class="rot-dots a a5"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+
+    <div class="spacer"></div>
+
+    <a class="link-gh a a6" href="https://atlasmedica.github.io" target="_blank" rel="noopener">atlasmedica.github.io ↗</a>
+    <p class="footer a a6">Conçu par des médecins pour des médecins<br>ATLAS<b>MEDICA</b> © 2026</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  const cv=document.getElementById('fx'), cx=cv.getContext('2d');
+  let W=0,H=0,DPR=1,parts=[];
+  function size(){
+    const r=cv.parentElement.getBoundingClientRect();
+    DPR=Math.min(devicePixelRatio||1,2);
+    W=cv.width=r.width*DPR; H=cv.height=r.height*DPR;
+    cx.setTransform(DPR,0,0,DPR,0,0);
+    const w=r.width,h=r.height;
+    parts=[];
+    const n=Math.round((w*h)/7000);
+    for(let i=0;i<Math.min(n,60);i++){
+      parts.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.6+.6,
+        vy:-(Math.random()*.22+.06),vx:(Math.random()-.5)*.15,
+        o:Math.random()*.5+.25,tw:Math.random()*4+.2,p:Math.random()*Math.PI*2,
+        plus:Math.random()<.18});
+    }
+  }
+  size();
+  let last=performance.now();
+  function frame(now){
+    const dt=Math.min((now-last)/1000,.05); last=now;
+    cx.clearRect(0,0,W,H);
+    cx.globalCompositeOperation='lighter';
+    for(const p of parts){
+      p.y+=p.vy*dt*60; p.x+=p.vx*dt*60; p.p+=dt*p.tw;
+      if(p.y< -8){p.y=H+8; p.x=Math.random()*W;}
+      const a=(Math.sin(p.p)*.35+.45)*p.o;
+      cx.globalAlpha=a;
+      const col=p.plus?'#67e8f9':'#fcd34d';
+      cx.fillStyle=col;
+      if(p.plus){ const s=p.r*5; cx.fillRect(p.x-s/2,p.y-1,s,2); cx.fillRect(p.x-1,p.y-s/2,2,s);}
+      else cx.beginPath(),cx.arc(p.x,p.y,p.r,0,6.2832),cx.fill();
+    }
+    cx.globalAlpha=1;
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  addEventListener('resize',size);
+
+  /* counters */
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting)return; obs.unobserve(e.target);
+    const el=e.target, t=+el.dataset.n, s=el.dataset.s||'', t0=performance.now();
+    (function tick(n){const p=Math.min((n-t0)/1100,1); el.textContent=Math.round(t*(1-Math.pow(1-p,3)))+s; if(p<1)requestAnimationFrame(tick);})(t0);
+  }),{threshold:.4});
+  document.querySelectorAll('.st b').forEach(b=>{
+    if(!b.dataset.n) return;
+    obs.observe(b);
+  });
+
+  /* rotor crossfade */
+  const ps=[...document.querySelectorAll('.rot-panel')];
+  const ds=[...document.querySelectorAll('.rot-dots i')];
+  let ri=0;
+  setInterval(()=>{
+    ps[ri].classList.remove('on'); ds[ri].classList.remove('on');
+    ri=(ri+1)%ps.length;
+    ps[ri].classList.add('on'); ds[ri].classList.add('on');
+  },3400);
+})();
+</script>
+</body>
+</html>
