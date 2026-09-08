@@ -20,16 +20,17 @@
 html,body{height:100%}
 body{
   font-family:'Inter',system-ui,sans-serif;background:radial-gradient(120% 100% at 50% 0%,#0a1224 0%,var(--bg) 60%);
-  color:var(--text);display:grid;justify-items:center;padding:16px;overflow-x:hidden;min-height:100dvh;
+  color:var(--text);display:block;text-align:center;padding:16px;overflow-x:hidden;min-height:100dvh;
 }
 .stage{
-  position:relative;width:100%;max-width:430px;min-height:min(94dvh,880px);overflow:hidden;border-radius:28px;
+  position:relative;width:100%;max-width:430px;margin:0 auto;min-height:min(94dvh,880px);overflow:visible;border-radius:28px;
   border:1px solid rgba(255,255,255,.1);box-shadow:0 40px 100px -30px rgba(0,0,0,.95),0 0 0 1px rgba(34,211,238,.05),inset 0 1px 0 rgba(255,255,255,.06);
   display:flex;flex-direction:column;align-items:center;text-align:center;
   background:
     radial-gradient(130% 90% at 50% -12%,#12203f 0%,#080d1c 48%,#0a0f1f 100%);
   padding:6.5% 7.5% 5%;
 }
+.clip{position:absolute;inset:0;overflow:hidden;border-radius:inherit;z-index:0}
 /* watermark brand */
 .wm{position:absolute;right:-6%;bottom:-14%;z-index:0;font:800 21rem 'Sora';color:transparent;-webkit-text-stroke:1px rgba(59,130,246,.10);pointer-events:none;user-select:none;line-height:1}
 /* glow orbs */
@@ -43,7 +44,7 @@ body{
 /* dust particles */
 #fx{position:absolute;inset:0;z-index:1;pointer-events:none}
 
-.poster{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;flex:1;width:100%}
+.poster{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%}
 .a{opacity:0;animation:fadeUp .8s cubic-bezier(.16,.84,.44,1) forwards}
 .a1{animation-delay:.15s}.a2{animation-delay:.3s}.a3{animation-delay:.45s}.a4{animation-delay:.6s}.a5{animation-delay:.75s}.a6{animation-delay:.9s}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
@@ -120,9 +121,11 @@ body{
 <body>
 
 <div class="stage">
-  <span class="wm">A</span>
-  <div class="orb orb-b"></div><div class="orb orb-v"></div><div class="orb orb-c"></div>
-  <canvas id="fx"></canvas>
+  <div class="clip">
+    <span class="wm">A</span>
+    <div class="orb orb-b"></div><div class="orb orb-v"></div><div class="orb orb-c"></div>
+    <canvas id="fx"></canvas>
+  </div>
 
   <div class="poster">
     <span class="badge a a1"><span class="b-dot"></span>Nouveau · v1.2.3 · Algérie</span>
@@ -232,6 +235,27 @@ body{
     ri=(ri+1)%ps.length;
     ps[ri].classList.add('on'); ds[ri].classList.add('on');
   },3400);
+
+  /* fit : le poster tient toujours sur un seul écran, sur téléphone */
+  function fitMobile(){
+    if(innerWidth>=700) return;
+    const st=document.querySelector('.stage');
+    const H=st.offsetHeight, V=innerHeight;
+    const s=Math.min(1,(V-24)/H);
+    const visH=H*s;
+    st.style.transform='scale('+s+')';
+    st.style.transformOrigin='top center';
+    st.style.marginTop=(s<1? (V-visH)/2-16 : 0)+'px';
+    document.documentElement.style.height=V+'px';
+    document.body.style.height=V+'px';
+    document.body.style.overflow='hidden';
+  }
+  addEventListener('resize',fitMobile);
+  addEventListener('orientationchange',()=>setTimeout(fitMobile,250));
+  addEventListener('load',()=>{setTimeout(fitMobile,1200);setTimeout(fitMobile,2500);});
+  document.fonts.ready.then(()=>setTimeout(fitMobile,60));
+  [400,1200,2500].forEach(t=>setTimeout(fitMobile,t));
+  fitMobile();
 })();
 </script>
 </body>
