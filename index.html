@@ -1,536 +1,498 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ATLASMEDICA — Logiciel Médical Intelligent</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATLASMEDICA — Le logiciel médical qui simplifie votre quotidien</title>
+<meta name="description" content="ATLASMEDICA : gestion de cabinet, téléconsultation et aide au diagnostic par IA. Conçu par des médecins pour des médecins. Démo gratuite 30 jours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav class="navbar" id="navbar">
-    <div class="container nav-container">
-      <a href="#" class="nav-logo">
-        <img src="assets/logo.png" alt="ATLASMEDICA" class="logo-img">
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#features">Fonctionnalités</a></li>
-        <li><a href="#gallery">Galerie</a></li>
-        <li><a href="#video">Vidéo</a></li>
-        <li><a href="#offers">Offres</a></li>
-        <li><a href="#demo">Démo</a></li>
-        <li><a href="#contact">Contact</a></li>
+<!-- ===== NAVBAR ===== -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#hero" class="logo">
+      <span class="logo-mark">A</span>
+      <span class="logo-text">ATLAS<span>MEDICA</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#promo">Présentation</a>
+      <a href="#features">Fonctionnalités</a>
+      <a href="#tele">Téléconsultation</a>
+      <a href="#ia">IA</a>
+      <a href="#pricing">Tarifs</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary">Demander une démo</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="grid-lines"></div>
+  </div>
+  <div class="container hero-grid">
+    <div class="hero-content reveal">
+      <span class="badge">Nouvelle version <b>1.2.3</b></span>
+      <h1>Le logiciel médical qui <span class="grad-text">simplifie</span> votre quotidien</h1>
+      <p class="hero-sub">De la prise de rendez-vous à la prescription, téléconsultation et IA diagnostique incluses. Tout-en-un, conçu par des médecins pour des médecins.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary btn-lg">Essayez gratuitement 30 jours</a>
+        <a href="#pricing" class="btn btn-ghost btn-lg">Voir les offres</a>
+      </div>
+      <ul class="hero-trust">
+        <li><span class="dot"></span> Données stockées sur votre poste</li>
+        <li><span class="dot"></span> Installation accompagnée</li>
+        <li><span class="dot"></span> SAV dédié</li>
       </ul>
-      <a href="#offers" class="btn btn-primary nav-cta">Choisir une offre</a>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-  </nav>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="badge">Version 1.2.3</span>
-        <h1>Le logiciel médical <br>qui <span class="gradient-text">simplifie</span> votre quotidien</h1>
-        <p>De la prise de rendez-vous à la prescription, ATLASMEDICA est l'outil tout-en-un conçu par des médecins pour des médecins. Interface moderne, scores cliniques intégrés, aucun détail ne vous échappe.</p>
-        <div class="hero-cta">
-          <a href="#offers" class="btn btn-primary btn-lg">Voir les offres</a>
-          <a href="#demo" class="btn btn-outline btn-lg">Demander une démo</a>
+    <div class="hero-visual reveal">
+      <div class="mock">
+        <div class="mock-top">
+          <span class="mock-dot red"></span><span class="mock-dot yellow"></span><span class="mock-dot green"></span>
+          <span class="mock-title">ATLASMEDICA — Aperçu du logiciel</span>
         </div>
-        <div class="hero-stats">
-          <div class="stat"><span class="stat-num">150+</span><span class="stat-label">Cabinet équipés</span></div>
-          <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Satisfaction</span></div>
-          <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Support prioritaire</span></div>
-        </div>
+        <img class="mock-img" src="assets/aff1.jpeg" alt="ATLASMEDICA — aperçu du logiciel">
+        <div class="float-chip f1"><span class="f-ico">🎥</span> Téléconsultation <b>en salle</b></div>
+        <div class="float-chip f2"><span class="f-ico">🤖</span> IA : diagnostic différentiel</div>
       </div>
-      <div class="hero-visual">
-        <div class="hero-photo-wrap">
-          <img src="assets/cover.jpg" alt="Médecin — ATLASMEDICA" class="hero-photo">
-          <div class="hero-float-card card-1">
-            <i class="fas fa-user-md"></i>
-            <span>Patient suivi</span>
-            <strong>M. Ali</strong>
-          </div>
-          <div class="hero-float-card card-2">
-            <i class="fas fa-heartbeat"></i>
-            <span>Signes vitaux</span>
-            <strong>12.4 / 8.2</strong>
-          </div>
-        </div>
-      </div>
+      <div class="pulse-ring"></div>
     </div>
-    <div class="hero-wave">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="var(--bg)"/></svg>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Médecine générale</span><b>•</b><span>Clinique</span><b>•</b><span>Polyclinique</span><b>•</b><span>Cabinet spécialisé</span><b>•</b><span>Groupe médical</span><b>•</b>
+      <span>Médecine générale</span><b>•</b><span>Clinique</span><b>•</b><span>Polyclinique</span><b>•</b><span>Cabinet spécialisé</span><b>•</b><span>Groupe médical</span><b>•</b>
     </div>
-  </section>
+  </div>
+</section>
 
+<!-- ===== STATS ===== -->
+<section class="stats" id="stats">
+  <div class="container stats-grid reveal">
+    <div class="stat"><span class="stat-num" data-count="190">0</span><span class="stat-label">entrées base de connaissances</span></div>
+    <div class="stat"><span class="stat-num" data-count="15" data-suffix="+">0</span><span class="stat-label">arbres décisionnels</span></div>
+    <div class="stat"><span class="stat-num" data-count="24">0</span><span class="stat-label">scores cliniques</span></div>
+    <div class="stat"><span class="stat-num" data-count="3">0</span><span class="stat-label">langues d'interface</span></div>
+  </div>
+</section>
 
-
-  <!-- ===== FEATURES ===== -->
-  <section class="features" id="features">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Fonctionnalités</span>
-        <h2>Un outil complet pensé <span class="gradient-text">pour le soin</span></h2>
-        <p>ATLASMEDICA couvre l'intégralité de votre flux de travail médical, de l'accueil du patient à la facturation.</p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card" data-delay="0">
-          <div class="feature-icon" style="--icn:#4f46e5"><i class="fas fa-calendar-check"></i></div>
-          <h3>Rendez-vous</h3>
-          <p>Calendrier interactif, détection de conflits, rappels automatiques.</p>
-        </div>
-        <div class="feature-card" data-delay="100">
-          <div class="feature-icon" style="--icn:#0891b2"><i class="fas fa-notes-medical"></i></div>
-          <h3>Consultation</h3>
-          <p>Motifs, diagnostics, traitements, observations — tout dans une interface fluide.</p>
-        </div>
-        <div class="feature-card" data-delay="200">
-          <div class="feature-icon" style="--icn:#059669"><i class="fas fa-file-prescription"></i></div>
-          <h3>Prescriptions</h3>
-          <p>Génération d'ordonnances avec QR code, posologie, durée, DCI.</p>
-        </div>
-        <div class="feature-card" data-delay="300">
-          <div class="feature-icon" style="--icn:#d97706"><i class="fas fa-qrcode"></i></div>
-          <h3>QR Code Patient</h3>
-          <p>Pathologies et traitements récents intégrés dans un QR unique.</p>
-        </div>
-        <div class="feature-card" data-delay="400">
-          <div class="feature-icon" style="--icn:#dc2626"><i class="fas fa-heartbeat"></i></div>
-          <h3>Scores Cliniques</h3>
-          <p>EVA, Glasgow, CRB-65, SpO₂, glycémie — calculs automatiques.</p>
-        </div>
-        <div class="feature-card" data-delay="450">
-          <div class="feature-icon" style="--icn:#0ea5e9"><i class="fas fa-flask"></i></div>
-          <h3>Calculs biologiques instantanés</h3>
-          <p>Clearance de la créatinine (DFG MDRD), HOMA-IR, bilans glycémique, lipidique, rénal, hépatique et inflammatoire — résultats et stades calculés automatiquement.</p>
-        </div>
-        <div class="feature-card" data-delay="500">
-          <div class="feature-icon" style="--icn:#7c3aed"><i class="fas fa-file-medical"></i></div>
-          <h3>Certificats</h3>
-          <p>Templates personnalisables, génération automatique de contenu.</p>
-        </div>
-        <div class="feature-card" data-delay="600">
-          <div class="feature-icon" style="--icn:#0d9488"><i class="fas fa-comments"></i></div>
-          <h3>Messagerie</h3>
-          <p>Communication interne entre praticiens avec notifications.</p>
-        </div>
-        <div class="feature-card" data-delay="700">
-          <div class="feature-icon" style="--icn:#e11d48"><i class="fas fa-chart-bar"></i></div>
-          <h3>Statistiques</h3>
-          <p>Tableau de bord, taux de réalisation, analyse des rendez-vous.</p>
-        </div>
-        <div class="feature-card" data-delay="800">
-          <div class="feature-icon" style="--icn:#2563eb"><i class="fas fa-palette"></i></div>
-          <h3>Personnalisation</h3>
-          <p>Thème clair/sombre, multilangue (FR/EN/AR), palette couleurs.</p>
-        </div>
-        <div class="feature-card" data-delay="900">
-          <div class="feature-icon" style="--icn:#0891b2"><i class="fas fa-user"></i></div>
-          <h3>Fiche patient enrichie</h3>
-          <p>Intolérances, antécédents chirurgicaux, médicaments en cours, carte récap imprimable.</p>
-        </div>
-        <div class="feature-card" data-delay="1000">
-          <div class="feature-icon" style="--icn:#7c3aed"><i class="fas fa-brain"></i></div>
-          <h3>Aide au diagnostic</h3>
-          <p>117 arbres décisionnels interactifs, base de connaissances CIM-10 (180+ entrées), alertes et suggestions cliniques.</p>
-        </div>
-      </div>
+<!-- ===== PROMO ===== -->
+<section class="promo-sec" id="promo">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Présentation</span>
+      <h2>ATLASMEDICA en <span class="grad-text">action</span></h2>
+      <p>Une minute de démonstration animée : cabinet, dossier patient, IA, téléconsultation et offres.</p>
     </div>
-  </section>
-
-  <!-- ===== GALLERY ===== -->
-  <section class="gallery" id="gallery">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Aperçu</span>
-        <h2>Découvrez <span class="gradient-text">l'application</span></h2>
-        <p>Captures réelles de l'interface ATLASMEDICA : tableau de bord, patients, consultations, rendez-vous et paramètres.</p>
-      </div>
-      <div class="gallery-grid">
-        <a href="assets/screenshots/main_window1.png" class="gallery-item" data-caption="Tableau de bord"><img src="assets/screenshots/main_window1.png" alt="Tableau de bord" loading="lazy"></a>
-        <a href="assets/screenshots/main_window2.png" class="gallery-item" data-caption="Tableau de bord — vue d'ensemble"><img src="assets/screenshots/main_window2.png" alt="Vue d'ensemble" loading="lazy"></a>
-        <a href="assets/screenshots/patient_view.png" class="gallery-item" data-caption="Fiche patient"><img src="assets/screenshots/patient_view.png" alt="Fiche patient" loading="lazy"></a>
-        <a href="assets/screenshots/Rendez-vous.png" class="gallery-item" data-caption="Rendez-vous & calendrier"><img src="assets/screenshots/Rendez-vous.png" alt="Rendez-vous" loading="lazy"></a>
-        <a href="assets/screenshots/consult1.png" class="gallery-item" data-caption="Consultation"><img src="assets/screenshots/consult1.png" alt="Consultation" loading="lazy"></a>
-        <a href="assets/screenshots/parametres.png" class="gallery-item" data-caption="Paramètres"><img src="assets/screenshots/parametres.png" alt="Paramètres" loading="lazy"></a>
-        <a href="assets/screenshots/login.png" class="gallery-item" data-caption="Connexion"><img src="assets/screenshots/login.png" alt="Connexion" loading="lazy"></a>
-        <a href="assets/screenshots/ordo.png" class="gallery-item" data-caption="Ordonnance"><img src="assets/screenshots/ordo.png" alt="Ordonnance" loading="lazy"></a>
-      </div>
+    <div class="promo-bar reveal">
+      <span class="ph">Séquence animée plein cadre · 1080p · 74 secondes</span>
+      <a href="promo.html" class="btn btn-ghost" target="_blank" rel="noopener">Ouvrir en plein écran ↗</a>
     </div>
-  </section>
-
-  <!-- ===== VIDEO ===== -->
-  <section class="video" id="video">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Présentation</span>
-        <h2>Découvrez ATLASMEDICA <span class="gradient-text">en vidéo</span></h2>
-        <p>Une minute pour comprendre comment ATLASMEDICA transforme votre quotidien médical.</p>
-      </div>
-      <div class="video-wrap" data-delay="0">
-        <video class="video-player" controls playsinline preload="metadata" poster="assets/cover.jpg">
-          <source src="assets/pub.mp4" type="video/mp4">
-          Votre navigateur ne supporte pas la lecture vidéo.
-        </video>
-      </div>
+    <div class="promo-frame reveal">
+      <iframe src="promo.html" title="Présentation ATLASMEDICA" loading="lazy" allowfullscreen></iframe>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== OFFERS ===== -->
-  <section class="offers" id="offers">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Tarifs</span>
-        <h2>Une offre pour <span class="gradient-text">chaque besoin</span></h2>
-        <p>Des formules flexibles et sans engagement. Évoluez selon votre activité.</p>
-      </div>
-
-      <div class="offers-grid">
-        <!-- BASE -->
-        <div class="offer-card">
-          <div class="offer-header">
-            <span class="offer-tag">Essentiel</span>
-            <h3>BASE</h3>
-            <div class="offer-price"><span class="price">5 000</span><span class="currency"> DA<small>/mois</small></span></div>
-            <p class="offer-desc">Pour médecin individuel débutant</p>
-          </div>
-          <ul class="offer-features">
-            <li><i class="fas fa-check-circle"></i> Authentification & gestion utilisateur</li>
-            <li><i class="fas fa-check-circle"></i> Fiche patient complète</li>
-            <li><i class="fas fa-check-circle"></i> Rendez-vous & calendrier</li>
-            <li><i class="fas fa-check-circle"></i> Consultation & prescriptions</li>
-            <li><i class="fas fa-check-circle"></i> Fiche patient enrichie (intolérances, médicaments)</li>
-            <li><i class="fas fa-check-circle"></i> Honoraire & statut paiement</li>
-            <li><i class="fas fa-check-circle"></i> Sauvegarde / restauration</li>
-            <li class="unchecked"><i class="fas fa-times-circle"></i> Scores cliniques</li>
-            <li class="unchecked"><i class="fas fa-times-circle"></i> QR code patient</li>
-            <li class="unchecked"><i class="fas fa-times-circle"></i> Aide au diagnostic</li>
-            <li class="unchecked"><i class="fas fa-times-circle"></i> Multi-utilisateurs</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary offer-btn">Choisir BASE</a>
-        </div>
-
-        <!-- EXTRA / PRO -->
-        <div class="offer-card featured">
-          <div class="offer-badge">Recommandé</div>
-          <div class="offer-header">
-            <span class="offer-tag">Professionnel</span>
-            <h3>EXTRA</h3>
-            <div class="offer-price"><span class="price">10 000</span><span class="currency"> DA<small>/mois</small></span></div>
-            <p class="offer-desc">Pour cabinet avec équipe</p>
-          </div>
-          <ul class="offer-features">
-            <li><i class="fas fa-check-circle"></i> Tout BASE</li>
-            <li><i class="fas fa-check-circle"></i> Thème & multilangue</li>
-            <li><i class="fas fa-check-circle"></i> Certificats médicaux</li>
-            <li><i class="fas fa-check-circle"></i> Scores cliniques (EVA, Glasgow, CRB-65)</li>
-            <li><i class="fas fa-check-circle"></i> Signes vitaux complets</li>
-            <li><i class="fas fa-check-circle"></i> Calculs biologiques instantanés (clearance créatinine, DFG MDRD, HOMA-IR)</li>
-            <li><i class="fas fa-check-circle"></i> Référentiel médicaments</li>
-            <li><i class="fas fa-check-circle"></i> Prescriptions avec posologie & DCI</li>
-            <li><i class="fas fa-check-circle"></i> QR code patient (pathologies + traitements)</li>
-            <li><i class="fas fa-check-circle"></i> Impression carte patient</li>
-            <li><i class="fas fa-check-circle"></i> File d'attente & appel patient</li>
-            <li><i class="fas fa-check-circle"></i> Statistiques & rapports</li>
-            <li><i class="fas fa-check-circle"></i> Historique patient complet</li>
-            <li><i class="fas fa-check-circle"></i> Messagerie & notifications</li>
-            <li><i class="fas fa-check-circle"></i> Aide au diagnostic (arbres décisionnels)</li>
-            <li><i class="fas fa-check-circle"></i> Base de connaissances CIM-10 (180+ entrées)</li>
-            <li><i class="fas fa-check-circle"></i> Support email prioritaire</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary offer-btn">Choisir EXTRA</a>
-        </div>
-
-        <!-- FULL OPTION -->
-        <div class="offer-card">
-          <div class="offer-header">
-            <span class="offer-tag">Premium</span>
-            <h3>FULL OPTION</h3>
-            <div class="offer-price"><span class="price">20 000</span><span class="currency"> DA<small>/mois</small></span></div>
-            <p class="offer-desc">Pour clinique ou polyclinique</p>
-          </div>
-          <ul class="offer-features">
-            <li><i class="fas fa-check-circle"></i> Tout EXTRA</li>
-            <li><i class="fas fa-check-circle"></i> Multi-utilisateurs & rôles (Admin, Médecin, Assistant)</li>
-            <li><i class="fas fa-check-circle"></i> Permissions granulaires par vue</li>
-            <li><i class="fas fa-check-circle"></i> Ordonnance avec QR code clinique (coordonnées)</li>
-            <li><i class="fas fa-check-circle"></i> Certificats avec contenu automatique</li>
-            <li><i class="fas fa-check-circle"></i> Licence logicielle & activation</li>
-            <li><i class="fas fa-check-circle"></i> Palette couleurs personnalisable</li>
-            <li><i class="fas fa-check-circle"></i> Statistiques financières avancées</li>
-            <li><i class="fas fa-check-circle"></i> Support téléphonique & prioritaire 24/7</li>
-            <li><i class="fas fa-check-circle"></i> Formation incluse (2 jours)</li>
-            <li><i class="fas fa-check-circle"></i> Intégration laboratoire d'analyses</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary offer-btn">Choisir FULL OPTION</a>
-        </div>
-
-        <!-- LICENCE À VIE -->
-        <div class="offer-card">
-          <div class="offer-header">
-            <span class="offer-tag">Sans abonnement</span>
-            <h3>LICENCE À VIE</h3>
-            <div class="offer-price"><span class="price">100 000</span><span class="currency"> DA<small> unique</small></span></div>
-            <p class="offer-desc">Licence définitive — logiciel seul, sans abonnement</p>
-          </div>
-          <ul class="offer-features">
-            <li><i class="fas fa-check-circle"></i> Tout FULL OPTION</li>
-            <li><i class="fas fa-check-circle"></i> Licence définitive — achat unique, sans abonnement</li>
-            <li><i class="fas fa-check-circle"></i> Mises à jour à vie incluses</li>
-            <li><i class="fas fa-check-circle"></i> Service après-vente (SAV) dédié</li>
-            <li><i class="fas fa-check-circle"></i> Migration des données incluse</li>
-            <li><i class="fas fa-check-circle"></i> Assistance téléphonique prioritaire illimitée</li>
-            <li><i class="fas fa-check-circle"></i> Personnalisation logiciel (logo, charte graphique)</li>
-            <li class="unchecked"><i class="fas fa-times-circle"></i> Site web personnalisé</li>
-            <li class="unchecked"><i class="fas fa-times-circle"></i> Nom de domaine + hébergement</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary offer-btn">Choisir LICENCE À VIE</a>
-        </div>
-
-        <!-- FULL CONTROL -->
-        <div class="offer-card">
-          <div class="offer-header">
-            <span class="offer-tag">Sur Mesure</span>
-            <h3>FULL CONTROL</h3>
-            <div class="offer-price"><span class="price">120 000</span><span class="currency"> DA<small> unique</small></span></div>
-            <p class="offer-desc">Solution clé en main avec site web personnalisé</p>
-          </div>
-          <ul class="offer-features">
-            <li><i class="fas fa-check-circle"></i> Tout FULL OPTION</li>
-            <li><i class="fas fa-check-circle"></i> Licence définitive — achat unique, sans abonnement</li>
-            <li><i class="fas fa-check-circle"></i> Site web personnalisé pour votre cabinet</li>
-            <li><i class="fas fa-check-circle"></i> Nom de domaine + hébergement (1 an offert)</li>
-            <li><i class="fas fa-check-circle"></i> Service après-vente (SAV) dédié</li>
-            <li><i class="fas fa-check-circle"></i> Formation approfondie (5 jours)</li>
-            <li><i class="fas fa-check-circle"></i> Mises à jour à vie incluses</li>
-            <li><i class="fas fa-check-circle"></i> Assistance téléphonique prioritaire illimitée</li>
-            <li><i class="fas fa-check-circle"></i> Migration des données incluse</li>
-            <li><i class="fas fa-check-circle"></i> Personnalisation logiciel (logo, charte graphique)</li>
-            <li><i class="fas fa-check-circle"></i> Site vitrine + module prise de RDV en ligne</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary offer-btn">Choisir FULL CONTROL</a>
-        </div>
-      </div>
+<!-- ===== FEATURES ===== -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Fonctionnalités</span>
+      <h2>Tout votre cabinet, <span class="grad-text">en un seul outil</span></h2>
+      <p>Des modules conçus pour le flux réel d'une consultation, sans frictions.</p>
     </div>
-  </section>
-
-  <!-- ===== COMPARISON TABLE ===== -->
-  <section class="comparison">
-    <div class="container">
-      <div class="section-header">
-        <h2>Comparatif <span class="gradient-text">détaillé</span></h2>
-      </div>
-      <div class="table-wrapper">
-        <table class="comp-table">
-          <thead>
-            <tr>
-              <th>Fonctionnalité</th>
-              <th class="col-base">BASE</th>
-              <th class="col-extra">EXTRA</th>
-              <th class="col-full">FULL OPTION</th>
-              <th class="col-lifetime">LICENCE À VIE</th>
-              <th class="col-control">FULL CONTROL</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Authentification & utilisateur</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Thème & multilangue</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Fiche patient (création, édition, liste)</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Rendez-vous & calendrier</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Consultation (motif, diagnostic, traitement)</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Prescriptions simples</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Certificats médicaux</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Honoraires & paiement</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Sauvegarde / restauration</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Dashboard & compteurs</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Fiche patient enrichie (intolérances, antécédents)</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Médicaments en cours & carte récap</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr class="divider"><td colspan="6"></td></tr>
-            <tr><td>Scores cliniques (EVA, Glasgow, CRB-65)</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Signes vitaux complets</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Calculs biologiques (clearance créatinine, DFG MDRD, HOMA-IR)</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Référentiel médicaments</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Prescriptions posologie/DCI</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>QR code patient</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>File d'attente & appel</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Statistiques & rapports</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Historique patient</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Messagerie & notifications</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Aide au diagnostic (arbres décisionnels)</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Base de connaissances CIM-10 (180+ entrées)</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr class="divider"><td colspan="6"></td></tr>
-            <tr><td>Multi-utilisateurs & rôles</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Permissions granulaires</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>QR code clinique sur ordonnance</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Certificats contenu automatique</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Palette couleurs personnalisable</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Statistiques financières avancées</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Support 24/7 & formation</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Intégration laboratoire</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr class="divider"><td colspan="6"></td></tr>
-            <tr><td>Licence définitive (achat unique)</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Site web personnalisé</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Nom de domaine + hébergement (1 an)</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Service après-vente (SAV) dédié</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Formation approfondie (5 jours)</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Mises à jour à vie</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Assistance prioritaire illimitée</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Personnalisation logiciel (logo, charte)</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
-            <tr><td>Site vitrine + RDV en ligne</td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-times"></i></td><td><i class="fas fa-check"></i></td></tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="feat-grid">
+      <article class="feat reveal">
+        <span class="feat-ico" style="--c:#3b82f6">📅</span>
+        <h3>Rendez-vous & file d'attente</h3>
+        <p>Calendrier, agenda partagé, appel patient et gestion de l'attente en temps réel.</p>
+      </article>
+      <article class="feat reveal">
+        <span class="feat-ico" style="--c:#22d3ee">👥</span>
+        <h3>Dossier patient complet & QR Code</h3>
+        <p>Antécédents, intolérances, traitements en cours et résumé instantané par QR code patient.</p>
+      </article>
+      <article class="feat reveal">
+        <span class="feat-ico" style="--c:#8b5cf6">💊</span>
+        <h3>Prescriptions intelligentes</h3>
+        <p>Posologie, DCI, référentiel médicaments et ordonnance avec QR clinique.</p>
+      </article>
+      <article class="feat reveal">
+        <span class="feat-ico" style="--c:#34d399">🧾</span>
+        <h3>Certificats & comptes rendus</h3>
+        <p>Certificats médicaux, demandes, exploitations et modèles automatiques.</p>
+      </article>
+      <article class="feat reveal">
+        <span class="feat-ico" style="--c:#f59e0b">📊</span>
+        <h3>Scores & calculs cliniques</h3>
+        <p>EVA, Glasgow, CRB-65, clearance créatinine, DFG MDRD, HOMA-IR et plus.</p>
+      </article>
+      <article class="feat reveal">
+        <span class="feat-ico" style="--c:#f472b6">💰</span>
+        <h3>Facturation & statistiques</h3>
+        <p>Honoraires, paiements, rapports et statistiques financières avancées.</p>
+      </article>
+      <article class="feat reveal">
+        <span class="feat-ico" style="--c:#fb923c">🛡</span>
+        <h3>Sauvegarde MySQL locale</h3>
+        <p>Vos données restent chez vous. Sauvegarde / restauration en un clic.</p>
+      </article>
+      <article class="feat reveal">
+        <span class="feat-ico" style="--c:#60a5fa">🌍</span>
+        <h3>Multilingue & thème</h3>
+        <p>Français, arabe et plus, avec palette de couleurs personnalisable.</p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== DEMO ===== -->
-  <section class="demo" id="demo">
-    <div class="container">
-      <div class="demo-card">
-        <div class="demo-content">
-          <span class="badge">Démo</span>
-          <h2>Essayez ATLASMEDICA <span class="gradient-text">gratuitement</span></h2>
-          <p>Testez toutes les fonctionnalités de l'offre FULL OPTION pendant 14 jours, sans engagement et sans carte bancaire.</p>
-          <ul class="demo-perks">
-            <li><i class="fas fa-check-circle"></i> Accès complet à toutes les fonctionnalités</li>
-            <li><i class="fas fa-check-circle"></i> Installation accompagnée par notre équipe</li>
-            <li><i class="fas fa-check-circle"></i> Support prioritaire pendant l'essai</li>
-            <li><i class="fas fa-check-circle"></i> Données migrées vers votre offre finale</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary btn-lg">Demander ma démo gratuite</a>
-        </div>
-        <div class="demo-visual">
-          <div class="demo-illu">
-            <i class="fas fa-laptop-medical"></i>
+<!-- ===== TELECONSULTATION ===== -->
+<section class="split" id="tele">
+  <div class="container split-grid">
+    <div class="split-visual reveal">
+      <div class="tc-stage">
+        <div class="tc-frame">
+          <div class="tc-bar"><span class="tc-live"></span> Salle sécurisée</div>
+          <div class="tc-screen">
+            <div class="tc-video"></div>
+            <div class="tc-chat">
+              <span class="tc-msg">Bonjour Dr, j'ai des douleurs thoraciques…</span>
+              <span class="tc-msg own">Notez votre tension actuelle.</span>
+            </div>
           </div>
         </div>
+        <div class="tc-badge">🔗 Lien unique par consultation</div>
       </div>
     </div>
-  </section>
+    <div class="split-content reveal">
+      <span class="kicker">Téléconsultation</span>
+      <h2>Consultez à distance, <span class="grad-text">sans friction</span></h2>
+      <p>Générez une salle de visioconférence en un clic et invitez votre patient par <strong>email, SMS ou WhatsApp</strong>.</p>
+      <ul class="check-list">
+        <li>Salle sécurisée avec lien unique par consultation</li>
+        <li>Contexte clinique transmis : motif, constantes, antécédents</li>
+        <li>Compte-rendu de téléconsultation rattaché au dossier patient</li>
+        <li>Aucune installation pour le patient : il ouvre le lien dans son navigateur</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <!-- ===== FAQ ===== -->
-  <section class="faq">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">FAQ</span>
-        <h2>Questions <span class="gradient-text">fréquentes</span></h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>ATLASMEDICA fonctionne-t-il sans Internet ?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer"><p>Oui. ATLASMEDICA fonctionne en local avec MySQL. Une connexion Internet n'est nécessaire que pour l'activation de la licence et les mises à jour.</p></div>
+<!-- ===== IA ===== -->
+<section class="split split-reverse" id="ia">
+  <div class="container split-grid">
+    <div class="split-content reveal">
+      <span class="kicker">Aide au diagnostic</span>
+      <h2>L'IA comme <span class="grad-text">second avis</span></h2>
+      <p>Moteur interne (TF-IDF + Bayes) sur plus de 190 entrées CIM-10, complété optionnellement par <strong>DeepSeek</strong> pour un diagnostic différentiel argumenté.</p>
+      <ul class="check-list">
+        <li>Suggestions locales instantanées : diagnostics, signes, codes CIM-10</li>
+        <li>Diagnostic différentiel avec probabilités et arguments pour/contre</li>
+        <li>Red flags et examens complémentaires à envisager</li>
+        <li>Anonymisation des données — rien ne quitte votre poste sans votre accord</li>
+      </ul>
+    </div>
+    <div class="split-visual reveal">
+      <div class="ia-stage">
+        <div class="ia-card">
+          <div class="ia-head">🤖 Analyse IA <span class="ia-pill">deepseek</span></div>
+          <div class="ia-line"><b>Diagnostic différentiel</b></div>
+          <div class="ia-row"><span class="ia-pct" style="--w:72%">Syndrome grippal — 72%</span></div>
+          <div class="ia-row"><span class="ia-pct" style="--w:21%">Infection ORL — 21%</span></div>
+          <div class="ia-row"><span class="ia-pct" style="--w:7%">Autres — 7%</span></div>
+          <div class="ia-alert">⚠ Red flag : vérifier la persistance > 7 jours</div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>Puis-je migrer depuis un autre logiciel ?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer"><p>Absolument. Notre équipe vous accompagne dans la migration de vos données patients, rendez-vous et historique depuis n'importe quel logiciel.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>Mes données sont-elles sécurisées ?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer"><p>Toutes les données sont stockées localement sur votre serveur. Les mots de passe sont hachés avec bcrypt, et des sauvegardes automatiques sont effectuées quotidiennement.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>Puis-je changer d'offre en cours de route ?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer"><p>Oui, vous pouvez passer à une offre supérieure à tout moment. La différence est calculée au prorata temporis. Vous pouvez aussi migrer vers une offre inférieure sans frais.</p></div>
-        </div>
+        <div class="ia-badge">190+ entrées décisionnelles</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== CONTACT ===== -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <span class="badge">Contact</span>
-          <h2>Prêt à passer à <span class="gradient-text">ATLASMEDICA</span> ?</h2>
-          <p>Laissez-nous vos coordonnées, notre équipe commerciale vous rappelle sous 24h.</p>
-          <div class="contact-details">
-            <div class="contact-detail"><i class="fas fa-envelope"></i> atlasmedica.group@gmail.com</div>
-            <div class="contact-detail"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/213770871850?text=Bonjour%20je%20souhaite%20des%20informations%20sur%20ATLASMEDICA" target="_blank" style="color:inherit;text-decoration:none">00213 770 871 850</a></div>
-            <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> Alger, Algérie</div>
-          </div>
-        </div>
-        <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact">
-          <div class="form-row">
-            <input type="text" name="nom" placeholder="Nom complet" required>
-            <input type="email" name="email" placeholder="Email professionnel" required>
-          </div>
-          <div class="form-row">
-            <input type="tel" name="telephone" placeholder="Téléphone">
-            <select name="offre">
-              <option value="">Offre souhaitée</option>
-              <option>BASE</option>
-              <option>EXTRA</option>
-              <option>FULL OPTION</option>
-              <option>FULL CONTROL</option>
-              <option>Démo gratuite</option>
-            </select>
-          </div>
-          <textarea name="message" placeholder="Message (optionnel)" rows="4"></textarea>
-          <button type="submit" class="btn btn-primary btn-lg">Envoyer la demande</button>
-        </form>
-      </div>
+<!-- ===== PRICING ===== -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Tarifs</span>
+      <h2>Une offre pour <span class="grad-text">chaque structure</span></h2>
     </div>
-  </section>
+    <div class="price-grid">
+      <article class="price reveal">
+        <h3>BASE</h3>
+        <p class="price-desc">Essentiel pour démarrer</p>
+        <div class="price-num"><small>Sur devis</small></div>
+        <ul>
+          <li>Patients & consultations</li>
+          <li>Rendez-vous & calendrier</li>
+          <li>Prescriptions simples</li>
+          <li>Honoraires & paiements</li>
+          <li>Sauvegarde / restauration</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Choisir BASE</a>
+      </article>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="assets/logo.png" alt="ATLASMEDICA" class="logo-img" style="height:32px">
-          <p>Le logiciel médical intelligent pour les professionnels de santé.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Produit</h4>
-          <a href="#features">Fonctionnalités</a>
-          <a href="#offers">Tarifs</a>
-          <a href="#demo">Démo</a>
-          <a href="#">Mises à jour</a>
-        </div>
-        <div class="footer-col">
-          <h4>Support</h4>
-          <a href="#contact">Contact</a>
-          <a href="#">Documentation</a>
-          <a href="#">Guide utilisateur</a>
-        </div>
-        <div class="footer-col">
-          <h4>Légal</h4>
-          <a href="#">Mentions légales</a>
-          <a href="#">Confidentialité</a>
-          <a href="#">CGV</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 ATLASMEDICA — Conçu avec <i class="fas fa-heart" style="color:#e11d48"></i> pour les professionnels de santé.</p>
-      </div>
+      <article class="price featured reveal">
+        <span class="price-badge">Recommandé</span>
+        <h3>EXTRA</h3>
+        <p class="price-desc">Pour cabinet avec équipe</p>
+        <div class="price-num">10 000 <small>DA / mois</small></div>
+        <ul>
+          <li>Tout BASE</li>
+          <li>Thème & multilangue</li>
+          <li>Certificats médicaux</li>
+          <li>Scores cliniques (EVA, Glasgow…)</li>
+          <li>Référentiel + prescriptions DCI</li>
+          <li>QR patient, file d'attente, stats</li>
+          <li>Aide au diagnostic & téléconsultation</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Choisir EXTRA</a>
+      </article>
+
+      <article class="price reveal">
+        <h3>FULL OPTION</h3>
+        <p class="price-desc">Pour clinique ou polyclinique</p>
+        <div class="price-num">20 000 <small>DA / mois</small></div>
+        <ul>
+          <li>Tout EXTRA</li>
+          <li>Multi-utilisateurs & rôles</li>
+          <li>Permissions granulaires</li>
+          <li>Ordonnance QR clinique</li>
+          <li>Statistiques financières avancées</li>
+          <li>Intégration laboratoire</li>
+          <li>Support 24/7 + formation 2 jours</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Choisir FULL OPTION</a>
+      </article>
+
+      <article class="price reveal">
+        <h3>LICENCE À VIE</h3>
+        <p class="price-desc">Achat unique, sans abonnement</p>
+        <div class="price-num">100 000 <small>DA unique</small></div>
+        <ul>
+          <li>Tout FULL OPTION</li>
+          <li>Mises à jour à vie</li>
+          <li>Migration des données incluse</li>
+          <li>SAV & assistance prioritaire</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Choisir la licence</a>
+      </article>
+
+      <article class="price dark-card reveal">
+        <h3>FULL CONTROL</h3>
+        <p class="price-desc">Clé en main sur mesure</p>
+        <div class="price-num">120 000 <small>DA unique</small></div>
+        <ul>
+          <li>Tout FULL OPTION</li>
+          <li>Licence définitive + mises à jour à vie</li>
+          <li>Site web personnalisé + domaine</li>
+          <li>RDV en ligne pour vos patients</li>
+          <li>Personnalisation logo & charte</li>
+          <li>Formation approfondie (5 jours)</li>
+        </ul>
+        <a href="#contact" class="btn btn-gradient">Choisir FULL CONTROL</a>
+      </article>
     </div>
-  </footer>
 
-  <a href="https://wa.me/213770871850?text=Bonjour%20je%20souhaite%20des%20informations%20sur%20ATLASMEDICA" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <script src="script.js"></script>
+    <div class="trial-cta reveal">
+      <div>
+        <h3>Testez gratuitement pendant 30 jours</h3>
+        <p>Toutes les fonctionnalités FULL OPTION, sans engagement et sans carte bancaire.</p>
+      </div>
+      <a href="#contact" class="btn btn-primary btn-lg">Lancer l'essai</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPARISON ===== -->
+<section class="compare" id="compare">
+  <div class="container reveal">
+    <div class="sec-head">
+      <h2>Comparatif <span class="grad-text">détaillé</span></h2>
+    </div>
+    <div class="table-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Fonctionnalité</th><th>BASE</th><th>EXTRA</th><th>FULL OPTION</th><th>LICENCE À VIE</th><th>FULL CONTROL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Fiche patient, QR Code & consultations</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
+          <tr><td>Rendez-vous & calendrier</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
+          <tr class="g"><td>Thème & multilangue</td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
+          <tr class="g"><td>Certificats & scores cliniques</td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
+          <tr class="g"><td>Référentiel & prescriptions DCI</td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
+          <tr class="g"><td>QR patient & file d'attente</td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
+          <tr class="g"><td><b>IA diagnostique & téléconsultation</b></td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
+          <tr class="p"><td>Multi-utilisateurs & rôles</td><td>—</td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
+          <tr class="p"><td>Ordonnance QR clinique</td><td>—</td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
+          <tr class="p"><td>Stats financières & intégration labo</td><td>—</td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
+          <tr><td>Licence définitive (achat unique)</td><td>—</td><td>—</td><td>—</td><td class="on">✓</td><td class="on">✓</td></tr>
+          <tr><td>Mises à jour à vie</td><td>—</td><td>—</td><td>—</td><td class="on">✓</td><td class="on">✓</td></tr>
+          <tr><td>Site web + RDV en ligne</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="on">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testi" id="testimonials">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Ils nous font confiance</span>
+      <h2>Pensé par des médecins, <span class="grad-text">approuvé par des médecins</span></h2>
+    </div>
+    <div class="testi-grid">
+      <blockquote class="reveal">
+        <p>« Je rédige mes ordonnances et certificats en deux minutes. La file d'attente a transformé ma salle d'attente. »</p>
+        <footer><b>Dr A. Bensaïd</b><span>Médecin généraliste — Alger</span></footer>
+      </blockquote>
+      <blockquote class="reveal">
+        <p>« La téléconsultation a sauvé mon suivi pendant les pics d'afflux. Mes patients ouvrent le lien sans rien installer. »</p>
+        <footer><b>Dr K. Mansouri</b><span>Médecin de famille — Oran</span></footer>
+      </blockquote>
+      <blockquote class="reveal">
+        <p>« L'IA me donne un second avis structuré avant de conclure. Un vrai gain pour les cas ambigus. »</p>
+        <footer><b>Dr S. Cherif</b><span>Généraliste — Constantine</span></footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">FAQ</span>
+      <h2>Questions <span class="grad-text">fréquentes</span></h2>
+    </div>
+    <div class="faq-list reveal">
+      <details>
+        <summary>Où sont stockées mes données ?</summary>
+        <p>Sur votre propre poste (MySQL local). Vous gardez le contrôle total et pouvez sauvegarder ou restaurer en un clic.</p>
+      </details>
+      <details>
+        <summary>Y a-t-il une période d'essai ?</summary>
+        <p>Oui, 30 jours gratuits avec toutes les fonctionnalités FULL OPTION, sans carte bancaire. Vos données sont migrées si vous souscrivez.</p>
+      </details>
+      <details>
+        <summary>L'IA remplace-t-elle mon jugement ?</summary>
+        <p>Non. C'est une aide à la réflexion clinique : elle propose un différentiel argumenté, signale les red flags et rappelle qu'elle ne remplace pas le praticien.</p>
+      </details>
+      <details>
+        <summary>Est-ce que mes patients doivent installer un logiciel pour la téléconsultation ?</summary>
+        <p>Non. Ils ouvrent simplement le lien de la salle dans leur navigateur (Jitsi).</p>
+      </details>
+      <details>
+        <summary>Quelle offre choisir pour une clinique ?</summary>
+        <p>FULL OPTION (multi-utilisateurs, rôles et permissions) ou FULL CONTROL si vous voulez aussi un site web avec RDV en ligne.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <span class="kicker">Contact</span>
+      <h2>Parlons de <span class="grad-text">votre cabinet</span></h2>
+      <p>Dites-nous votre structure, on vous propose l'offre adaptée et une démo personnalisée.</p>
+      <ul class="contact-list">
+        <li><span class="c-ico">✉️</span> atlasmedica.group@gmail.com</li>
+        <li><span class="c-ico">💬</span> Réponse sous 24h ouvrées</li>
+        <li><span class="c-ico">🛡</span> Accompagnement à l'installation</li>
+      </ul>
+    </div>
+    <form class="contact-form reveal" id="contactForm" name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact">
+      <div class="field">
+        <label for="cname">Nom complet</label>
+        <input id="cname" name="nom" type="text" placeholder="Dr …" required>
+      </div>
+      <div class="field">
+        <label for="cemail">Email</label>
+        <input id="cemail" name="email" type="email" placeholder="vous@cabinet.dz" required>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="cphone">Téléphone</label>
+          <input id="cphone" name="telephone" type="tel" placeholder="05 XX XX XX XX">
+        </div>
+        <div class="field">
+          <label for="coffer">Offre</label>
+          <select id="coffer" name="offre">
+            <option>EXTRA</option>
+            <option>FULL OPTION</option>
+            <option>LICENCE À VIE</option>
+            <option>FULL CONTROL</option>
+            <option>Essai 30 jours</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="cmsg">Message</label>
+        <textarea id="cmsg" name="message" rows="4" placeholder="Parlez-nous de votre projet…"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Envoyer la demande</button>
+      <p class="form-ok" id="formOk">✓ Merci ! Nous revenons vers vous sous 24h.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <a href="#hero" class="logo"><span class="logo-mark">A</span><span class="logo-text">ATLAS<span>MEDICA</span></span></a>
+      <p>Le logiciel médical tout-en-un pour les médecins algériens. Téléconsultation, IA diagnostique et gestion complète de cabinet.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Produit</h4>
+      <a href="#features">Fonctionnalités</a>
+      <a href="#tele">Téléconsultation</a>
+      <a href="#ia">IA diagnostique</a>
+      <a href="#pricing">Tarifs</a>
+    </div>
+    <div class="footer-col">
+      <h4>Entreprise</h4>
+      <a href="#testimonials">Témoignages</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:atlasmedica.group@gmail.com">atlasmedica.group@gmail.com</a>
+      <span>Algérie — assistance à distance</span>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 ATLASMEDICA (atlasmedica.health) — Tous droits réservés.</span>
+    <span>Version 1.2.3</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<!-- ===== WHATSAPP FLOATING ===== -->
+<a href="#" class="wa-float" id="waBtn" aria-label="Discuter sur WhatsApp">
+  <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true">
+    <path d="M16.04 3C8.94 3 3.19 8.75 3.19 15.85c0 2.35.68 4.62 1.97 6.6L3.05 29l6.68-1.75a12.9 12.9 0 0 0 6.3 1.61h.01c7.09 0 12.85-5.75 12.85-12.85 0-3.43-1.34-6.66-3.76-9.09A12.76 12.76 0 0 0 16.04 3Zm0 23.62h-.01c-2.02 0-4-.54-5.74-1.57l-.41-.24-3.96 1.04 1.06-3.86-.27-.43a10.62 10.62 0 0 1-1.63-5.71C5.08 9.9 10 5 16.04 5c3.12 0 6.05 1.22 8.26 3.43a11.72 11.72 0 0 1 3.42 8.27c-.01 6.05-4.93 10.92-9.68 10.92Zm5.62-8.2c-.31-.16-1.83-.9-2.12-1.01-.28-.11-.49-.16-.7.16-.2.31-.79 1.01-.97 1.21-.18.2-.36.23-.67.08-.31-.16-1.31-.48-2.5-1.54a9.34 9.34 0 0 1-1.73-2.15c-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.21-.31.31-.51.1-.2.05-.38-.03-.53-.08-.16-.7-1.68-.95-2.3-.25-.6-.51-.52-.7-.53h-.6c-.2 0-.53.08-.81.38-.28.31-1.06 1.04-1.06 2.53s1.08 2.93 1.24 3.14c.15.2 2.13 3.26 5.17 4.57.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.83-.75 2.09-1.47.25-.72.25-1.34.18-1.47-.08-.13-.28-.21-.59-.37Z"/>
+  </svg>
+  <span class="wa-tip">Discuter sur WhatsApp</span>
+</a>
+
 </body>
 </html>

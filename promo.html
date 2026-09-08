@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATLASMEDICA — Promo animée (enregistrer avec OBS)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05070d;--surface:#0a1122;--border:rgba(255,255,255,.09);
+  --text:#e6edf7;--muted:#94a3b8;
+  --blue:#3b82f6;--cyan:#22d3ee;--violet:#8b5cf6;--green:#34d399;
+  --grad:linear-gradient(120deg,#3b82f6,#22d3ee 45%,#8b5cf6);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family:'Inter',system-ui,sans-serif;background:#000;color:var(--text);
+  display:grid;place-items:center;overflow:hidden;cursor:default;
+}
+h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.12}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ===== STAGE 16:9 ===== */
+.stage{
+  position:relative;width:min(96vw, calc(96vh * 16 / 9));aspect-ratio:16/9;
+  background:radial-gradient(1200px 700px at 50% -10%, #0e1830, var(--bg) 60%);
+  border:1px solid rgba(255,255,255,.06);border-radius:18px;overflow:hidden;
+}
+/* animated mood */
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;z-index:0}
+.orb-1{width:480px;height:480px;background:radial-gradient(circle,#1d4ed8,transparent 70%);top:-140px;left:-120px;animation:drift1 9s ease-in-out infinite}
+.orb-2{width:420px;height:420px;background:radial-gradient(circle,#7c3aed,transparent 70%);bottom:-160px;right:-100px;animation:drift2 11s ease-in-out infinite}
+.orb-3{width:300px;height:300px;background:radial-gradient(circle,#0e7490,transparent 70%);top:45%;left:55%;animation:drift3 13s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(70px,40px)}}
+@keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(-60px,-50px)}}
+@keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-40px,30px) scale(1.15)}}
+.grid-lines{
+  position:absolute;inset:0;z-index:0;opacity:.5;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(80% 80% at 50% 50%,#000 30%,transparent 100%);
+}
+/* letterbox */
+.lb{position:absolute;left:0;right:0;height:7vh;background:#000;z-index:5}
+.lb-top{top:0}.lb-bot{bottom:0}
+
+/* ===== SCENES ===== */
+.scene{position:absolute;inset:0;z-index:1;display:grid;place-items:center;text-align:center;padding:0 6%;opacity:0;transition:opacity .8s ease;pointer-events:none}
+.scene.on{opacity:1}
+.kicker{display:inline-flex;align-items:center;gap:.5rem;font:600 .82rem 'Sora';letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);border:1px solid rgba(34,211,238,.25);background:rgba(34,211,238,.07);padding:.45rem 1rem;border-radius:999px;margin-bottom:1.2rem}
+.kicker b{color:var(--text)}
+.big{font-size:clamp(1.9rem,5.4vw,4.4rem);font-weight:800;letter-spacing:-.02em;max-width:18ch;margin-inline:auto}
+.sub{color:var(--muted);font-size:clamp(.85rem,1.5vw,1.2rem);margin-top:1.1rem;max-width:56ch;margin-inline:auto}
+.anim{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.scene.on .anim{opacity:1;transform:none}
+.d1{transition-delay:.15s}.d2{transition-delay:.35s}.d3{transition-delay:.55s}.d4{transition-delay:.75s}.d5{transition-delay:.95s}
+
+/* logo */
+.logo-mark{width:86px;height:86px;border-radius:26px;display:grid;place-items:center;font:800 2.6rem 'Sora';color:#06101d;background:var(--grad);box-shadow:0 0 0 1px rgba(255,255,255,.15),0 24px 60px -12px rgba(34,211,238,.55);margin-inline:auto;margin-bottom:1.1rem}
+.logo-title{font-size:clamp(2.2rem,6vw,5rem);font-weight:800;letter-spacing:.02em}
+.logo-title span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* UI card generic */
+.ui{width:min(560px,72%);background:linear-gradient(160deg,#101a33,#0a1122);border:1px solid var(--border);border-radius:16px;overflow:hidden;text-align:left;box-shadow:0 40px 90px -20px rgba(0,0,0,.8);margin:1.6rem auto 0}
+.ui-top{display:flex;align-items:center;gap:.45rem;padding:.6rem .8rem;background:rgba(255,255,255,.03);border-bottom:1px solid var(--border)}
+.ud{width:10px;height:10px;border-radius:50%}.ud.r{background:#f87171}.ud.y{background:#fbbf24}.ud.g{background:#34d399}
+.ui-title{font-size:.66rem;color:var(--muted);margin-left:.3rem}
+.ui-body{padding:1rem;display:flex;flex-direction:column;gap:.55rem}
+.row{display:flex;align-items:center;gap:.6rem;padding:.5rem .7rem;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid var(--border);font-size:.78rem}
+.row .ic{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-size:.8rem;flex:none}
+.row .txt{flex:1}.row .txt b{font-weight:600;font-size:.8rem}.row .txt small{color:var(--muted);font-size:.68rem}
+.row .chip{font-size:.66rem;font-weight:600;padding:.25rem .55rem;border-radius:8px}
+.c-blue{background:rgba(59,130,246,.16);color:#93c5fd}.c-cyan{background:rgba(34,211,238,.14);color:#67e8f9}.c-violet{background:rgba(139,92,246,.16);color:#c4b5fd}.c-green{background:rgba(52,211,153,.14);color:#6ee7b7}
+.ui-img{display:block;width:100%;max-height:290px;object-fit:cover;object-position:top}
+
+/* IA bars */
+.ia-card{width:min(560px,74%);background:linear-gradient(160deg,#101a33,#0a1122);border:1px solid var(--border);border-radius:16px;padding:1.1rem;text-align:left;margin:1.5rem auto 0;box-shadow:0 40px 90px -20px rgba(0,0,0,.8)}
+.ai-head{display:flex;align-items:center;justify-content:space-between;font-size:.78rem;font-weight:600;margin-bottom:.8rem}
+.ai-pill{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--violet);border:1px solid rgba(139,92,246,.35);padding:.2rem .55rem;border-radius:999px}
+.bar{margin:.5rem 0}.bar .bl{font-size:.7rem;color:var(--muted);margin-bottom:.25rem}
+.bar .bt{height:12px;border-radius:8px;background:linear-gradient(90deg,var(--c1),var(--c2));width:0;transition:width 1s ease var(--wd)}
+.scene.on .bar .bt{width:var(--p)}
+.flag{margin-top:1rem;font-size:.74rem;font-weight:600;color:#fbbf24;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.25);padding:.5rem .7rem;border-radius:10px;text-align:center}
+
+/* tele */
+.tc{width:min(600px,76%);background:linear-gradient(160deg,#101a33,#0a1122);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin:1.5rem auto 0;box-shadow:0 40px 90px -20px rgba(0,0,0,.8)}
+.tc-bar{display:flex;align-items:center;gap:.5rem;padding:.55rem .8rem;background:rgba(255,255,255,.03);border-bottom:1px solid var(--border);font-size:.72rem;color:var(--muted)}
+.live{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);animation:blink 1.6s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+.tc-body{display:grid;grid-template-columns:1.4fr 1fr;min-height:200px}
+.tc-vid{background:radial-gradient(circle at 50% 30%,#16223f, #0a0f1e 70%);position:relative}
+.tc-vid::after{content:"";position:absolute;inset:auto 0 -38% 0;height:90%;background:radial-gradient(60% 60% at 50% 50%,rgba(34,211,238,.35),transparent)}
+.tc-chat{background:rgba(255,255,255,.03);border-left:1px solid var(--border);display:flex;flex-direction:column;gap:.55rem;padding:.7rem}
+.msg{font-size:.66rem;padding:.45rem .6rem;border-radius:10px;background:rgba(255,255,255,.06);color:var(--muted);max-width:85%}
+.msg.own{align-self:flex-end;background:linear-gradient(90deg,rgba(37,99,235,.35),rgba(14,165,233,.3));color:var(--text)}
+.msg small{display:block;font-size:.58rem;opacity:.7;margin-top:.15rem}
+
+/* pricing chips */
+.price-wrap{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem}
+.pcard{width:150px;text-align:center;background:linear-gradient(160deg,#0e1830,#0a1122);border:1px solid var(--border);border-radius:14px;padding:1rem .8rem;transform:translateY(16px);opacity:0;transition:all .6s ease var(--wd)}
+.scene.on .pcard{transform:none;opacity:1}
+.pcard.featured{border-color:rgba(34,211,238,.45);box-shadow:0 20px 50px -12px rgba(34,211,238,.35)}
+.pcard h4{font-size:.86rem;font-weight:700;margin-bottom:.2rem}
+.pcard .pn{font-size:1.1rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pcard small{color:var(--muted);font-size:.62rem}
+.pcard ul{list-style:none;font-size:.62rem;color:var(--muted);margin-top:.55rem;text-align:left;padding-left:.2rem}
+.pcard li::before{content:"✓ ";color:var(--green)}
+
+/* cta */
+.cta-btn{display:inline-block;font:700 1rem 'Sora';color:#06101d;background:var(--grad);padding:.95rem 2rem;border-radius:14px;margin-top:1.6rem;box-shadow:0 24px 60px -12px rgba(34,211,238,.5)}
+.cta-sub{margin-top:1rem;color:var(--muted);font-size:.85rem;display:flex;gap:1.6rem;justify-content:center;flex-wrap:wrap}
+.cta-sub span{display:flex;align-items:center;gap:.4rem}.cta-sub .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+
+/* hud */
+.hud{position:absolute;z-index:6;left:0;right:0;bottom:7vh;display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;font-size:.72rem;color:var(--muted);pointer-events:none}
+.dots{display:flex;gap:.4rem}
+.dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.18);transition:all .3s}
+.dots i.on{background:var(--cyan);box-shadow:0 0 10px var(--cyan);transform:scale(1.25)}
+.hud .ver{letter-spacing:.14em}
+.rec-hint{position:absolute;z-index:6;top:7vh;left:50%;transform:translateX(-50%);font-size:.68rem;color:rgba(148,163,184,.6);letter-spacing:.05em}
+
+/* poussière */
+#fx{position:absolute;inset:0;z-index:4;pointer-events:none}
+
+/* intro aligné en haut à gauche */
+.scene.leftz{place-items:start start;text-align:left;padding:12vh 0 0 4%}
+
+/* ===== FOND CONTINU aff2 ===== */
+.bgx{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;animation:kb 16s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.02) translateY(0)}to{transform:scale(1.12) translateY(-1.5%)}}
+.bgx-veil{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(5,7,13,.8) 0%,rgba(5,7,13,.45) 45%,rgba(5,7,13,.82) 100%)}
+</style>
+</head>
+<body>
+
+<div class="stage" id="stage">
+  <img class="bgx" src="assets/aff2.jpeg" alt="fond ATLASMEDICA">
+  <div class="bgx-veil"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="grid-lines"></div>
+  <div class="lb lb-top"></div><div class="lb lb-bot"></div>
+
+  <!-- SCENE 1 : INTRO -->
+  <section class="scene leftz" data-d="10" data-cap="ATLASMEDICA — le logiciel médical qui simplifie votre quotidien, version 1.2.3.">
+    <div>
+      <p class="sub anim d1" style="margin-inline:0">Le logiciel médical qui simplifie votre quotidien.</p>
+      <p class="sub anim d2" style="margin-inline:0;font-size:.8rem;color:rgba(148,163,184,.7)">Version 1.2.3 · Conçu par des médecins pour des médecins</p>
+    </div>
+  </section>
+
+  <!-- SCENE 2 : GESTION DE CABINET -->
+  <section class="scene" data-d="10">
+    <div style="width:100%">
+      <span class="kicker anim">Gestion de cabinet <b>· Tout-en-un</b></span>
+      <h2 class="big anim d1">De la prise de <span class="grad-text">rendez-vous</span> à la prescription</h2>
+      <div class="ui anim d2">
+        <div class="ui-top"><span class="ud r"></span><span class="ud y"></span><span class="ud g"></span><span class="ui-title">ATLASMEDICA — Agenda</span></div>
+        <div class="ui-body">
+          <div class="row"><span class="ic c-blue">📅</span><span class="txt"><b>Consultation — Dr Bensaïd</b><small>09:40 · Amine B. — douleur thoracique</small></span><span class="chip c-green">En salle</span></div>
+          <div class="row"><span class="ic c-cyan">👥</span><span class="txt"><b>Patient suivant</b><small>10:10 · K. Mansouri — suivi HTN</small></span><span class="chip c-cyan">Attente</span></div>
+          <div class="row"><span class="ic c-violet">🧾</span><span class="txt"><b>Certificat généré</b><small>Demande d'examen · 2 min</small></span><span class="chip c-blue">PDF</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 3 : DOSSIER PATIENT + QR -->
+  <section class="scene" data-d="12">
+    <div style="width:100%">
+      <span class="kicker anim">Dossier patient <b>· QR Code</b></span>
+      <h2 class="big anim d1">L'histoire clinique, <span class="grad-text">instantanée</span></h2>
+      <div class="ui anim d2">
+        <div class="ui-top"><span class="ud r"></span><span class="ud y"></span><span class="ud g"></span><span class="ui-title">ATLASMEDICA — Dossier patient</span></div>
+        <img class="ui-img" src="assets/aff1.jpeg" alt="Dossier patient ATLASMEDICA">
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 4 : IA DIAGNOSTIQUE -->
+  <section class="scene" data-d="12">
+    <div style="width:100%">
+      <span class="kicker anim">Aide au diagnostic <b>· IA intégrée</b></span>
+      <h2 class="big anim d1">L'IA comme <span class="grad-text">second avis</span></h2>
+      <div class="ia-card anim d2">
+        <div class="ai-head">🤖 Analyse IA <span class="ai-pill">DeepSeek</span></div>
+        <div class="bar" style="--c1:#2563eb;--c2:#22d3ee;--p:72%;--wd:.2s"><div class="bl">Syndrome grippal — 72%</div><div class="bt"></div></div>
+        <div class="bar" style="--c1:#8b5cf6;--c2:#f472b6;--p:21%;--wd:.6s"><div class="bl">Infection ORL — 21%</div><div class="bt"></div></div>
+        <div class="bar" style="--c1:#64748b;--c2:#94a3b8;--p:7%;--wd:1s"><div class="bl">Autres — 7%</div><div class="bt"></div></div>
+        <div class="flag">⚠ Red flag : persistance &gt; 7 jours — examens à envisager</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 5 : TELECONSULTATION -->
+  <section class="scene" data-d="12">
+    <div style="width:100%">
+      <span class="kicker anim">Téléconsultation <b>· Jitsi sécurisé</b></span>
+      <h2 class="big anim d1">Consultez à distance, <span class="grad-text">sans friction</span></h2>
+      <div class="tc anim d2">
+        <div class="tc-bar"><span class="live"></span> Salle sécurisée — lien unique</div>
+        <div class="tc-body">
+          <div class="tc-vid"></div>
+          <div class="tc-chat">
+            <span class="msg">Bonjour Dr, j'ai des douleurs thoraciques…<small>Patient · 10:42</small></span>
+            <span class="msg own">Notez votre tension actuelle.<small>Vous</small></span>
+            <span class="msg">12/8, merci.<small>Patient · 10:43</small></span>
+          </div>
+        </div>
+      </div>
+      <p class="sub anim d3" style="font-size:.8rem">Convocation par email, SMS ou WhatsApp</p>
+    </div>
+  </section>
+
+  <!-- SCENE 6 : OFFRES -->
+  <section class="scene" data-d="9">
+    <div style="width:100%">
+      <span class="kicker anim">Tarifs <b>· Une offre pour chaque structure</b></span>
+      <h2 class="big anim d1">Simple et <span class="grad-text">sans engagement</span></h2>
+      <div class="price-wrap">
+        <div class="pcard anim" style="--wd:.1s"><h4>BASE</h4><div class="pn">Sur devis</div><ul><li>Consultations</li><li>Rendez-vous</li></ul></div>
+        <div class="pcard featured anim" style="--wd:.25s"><h4>EXTRA</h4><div class="pn">10 000 DA</div><small>/ mois</small><ul><li>IA + téléconsultation</li><li>Scores cliniques</li></ul></div>
+        <div class="pcard anim" style="--wd:.4s"><h4>FULL OPTION</h4><div class="pn">20 000 DA</div><small>/ mois</small><ul><li>Multi-utilisateurs</li><li>Rôles & accès</li></ul></div>
+        <div class="pcard anim" style="--wd:.55s"><h4>FULL CONTROL</h4><div class="pn">120 000 DA</div><small>unique</small><ul><li>Clé en main</li><li>Site + RDV en ligne</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 7 : CTA -->
+  <section class="scene" data-d="9">
+    <div>
+      <span class="kicker anim">Essai gratuit <b>· 30 jours</b></span>
+      <h2 class="big anim d1">Prêt à <span class="grad-text">moderniser</span> votre cabinet ?</h2>
+      <a class="cta-btn anim d2" href="mailto:atlasmedica.group@gmail.com">Essayez gratuitement 30 jours</a>
+      <p class="cta-sub anim d3">
+        <span><span class="dot"></span> Sans carte bancaire</span>
+        <span><span class="dot"></span> Données sur votre poste</span>
+        <span><span class="dot"></span> SAV dédié</span>
+      </p>
+    </div>
+  </section>
+
+  <canvas id="fx"></canvas>
+  <div class="rec-hint">Lancez OBS (1080p · 60 fps) puis appuyez sur ESPACE éventuellement pour les versions</div>
+  <div class="caption" id="caption"></div>
+  <div class="hud">
+    <span>ATLASMEDICA</span>
+    <div class="dots" id="dots"></div>
+    <span class="ver">VERSION 1.2.3</span>
+  </div>
+</div>
+
+<script>
+const scenes=[...document.querySelectorAll('.scene')];
+const dotsWrap=document.getElementById('dots');
+const stage=document.getElementById('stage');
+const fx=document.getElementById('fx');
+const fxc=fx.getContext('2d');
+const rnd=(a,b)=>a+Math.random()*(b-a);
+let cur=0, fxW=0, fxH=0, DPR=1, running=null;
+
+/* particle canvas setup */
+function sizeFx(){
+  const r=stage.getBoundingClientRect();
+  DPR=Math.min(window.devicePixelRatio||1,2);
+  fxW=Math.round(r.width); fxH=Math.round(r.height);
+  fx.width=Math.round(fxW*DPR); fx.height=Math.round(fxH*DPR);
+  fxc.setTransform(DPR,0,0,DPR,0,0);
+}
+sizeFx(); addEventListener('resize',sizeFx);
+
+const ease=(t)=>t<0?0:1-Math.pow(1-Math.min(1,t),3);
+
+/* rasterise the big title into gradient-coloured dust particles */
+function sampleTitle(scene,count){
+  const el=scene.querySelector('h2.big'); if(!el) return null;
+  const sr=stage.getBoundingClientRect();
+  const r=el.getBoundingClientRect();
+  const S=2;
+  const c=document.createElement('canvas');
+  c.width=Math.max(2,Math.round(r.width*S)); c.height=Math.max(2,Math.round(r.height*S));
+  const cc=c.getContext('2d');
+  const g=cc.createLinearGradient(0,0,c.width,c.height);
+  g.addColorStop(0,'#3b82f6'); g.addColorStop(.45,'#22d3ee'); g.addColorStop(1,'#8b5cf6');
+  cc.fillStyle=g;
+  cc.font=`800 ${Math.round(parseFloat(getComputedStyle(el).fontSize)*S)}px Sora, sans-serif`;
+  cc.textAlign='center'; cc.textBaseline='middle';
+  cc.fillText(el.textContent, c.width/2, c.height/2);
+  const img=cc.getImageData(0,0,c.width,c.height);
+  const step=Math.max(1,Math.round(Math.sqrt((c.width*c.height)/Math.max(400,count*9))));
+  const ps=[];
+  for(let yy=0;yy<c.height;yy+=step){
+    for(let xx=0;xx<c.width;xx+=step){
+      const i4=(yy*c.width+xx)*4;
+      if(img.data[i4+3]>70){
+        ps.push({ tx:r.left-sr.left+xx/S, ty:r.top-sr.top+yy/S,
+                  r:img.data[i4], g:img.data[i4+1], b:img.data[i4+2] });
+      }
+    }
+  }
+  return ps;
+}
+
+function dustFx(oldScene,newScene){
+  if(running){ cancelAnimationFrame(running); running=null; fxc.clearRect(0,0,fxW,fxH); }
+  const oe=oldScene&&oldScene.querySelector('h2.big');
+  const ne=newScene.querySelector('h2.big');
+  const old=oldScene?sampleTitle(oldScene,1500):null;
+  const nw=sampleTitle(newScene,1500);
+  // hide the real titles during the effect
+  if(oe) oe.style.visibility='hidden';
+  if(ne) ne.style.visibility='hidden';
+  const T=old?1150:900;
+  const wind=70, fall=120;
+  const O=(old?old:[]).map(p=>{
+    const dx=p.tx+(p.tx-fxW/2)/(fxW/2)*wind + rnd(-60,60);
+    const dy=p.ty+(p.ty-fxH/2)/(fxH/2)*fall + rnd(-40,90);
+    return {x:p.tx,y:p.ty,x0:p.tx,y0:p.ty,tx:dx,ty:dy,r:p.r,g:p.g,b:p.b};
+  });
+  const N=(nw?nw:[]).map(p=>({
+    x0:p.tx+rnd(-fw2(),fw2()), y0:p.ty-rnd(40,240),
+    x:0,y:0,tx:p.tx,ty:p.ty,r:p.r,g:p.g,b:p.b
+  }));
+  function fw2(){ return fxW/2; }
+  const t0=performance.now();
+  function frame(now){
+    const t=Math.min((now-t0)/T,1.16);
+    fxc.clearRect(0,0,fxW,fxH);
+    fxc.globalCompositeOperation='lighter';
+    const fa=Math.pow(Math.max(0,1-t/0.5),1.3);
+    for(const p of O){ const q=ease(Math.min(1,t/0.5)); p.x=p.x0+(p.tx-p.x0)*q; p.y=p.y0+(p.ty-p.y0)*q; fxc.globalAlpha=fa; px(p); }
+    const qn=ease(Math.max(0,(t-0.22))/0.82);
+    for(const p of N){ p.x=p.x0+(p.tx-p.x0)*qn; p.y=p.y0+(p.ty-p.y0)*qn; fxc.globalAlpha=Math.min(1,qn*1.7); px(p); }
+    fxc.globalAlpha=1;
+    fxc.globalCompositeOperation='source-over';
+    if(t>=1.1){
+      fxc.clearRect(0,0,fxW,fxH);
+      if(ne) ne.style.visibility='visible';
+      if(oe) oe.style.visibility='visible';
+      running=null; return;
+    }
+    running=requestAnimationFrame(frame);
+  }
+  function px(p){ fxc.fillStyle=`rgb(${p.r|0},${p.g|0},${p.b|0})`; fxc.fillRect(p.x-1.2,p.y-1.2,2.4,2.4); }
+  running=requestAnimationFrame(frame);
+}
+
+function rebuildDots(){dotsWrap.innerHTML='';scenes.forEach((_,i)=>{const d=document.createElement('i');if(i===cur)d.classList.add('on');dotsWrap.appendChild(d);});}
+function show(n){
+  const oldScene=scenes.find(s=>s.classList.contains('on'))||null;
+  scenes.forEach(s=>s.classList.remove('on'));
+  scenes[n].classList.add('on');
+  dustFx(oldScene,scenes[n]);
+  cur=n;
+  rebuildDots();
+  setTimeout(next, +scenes[n].dataset.d*1000);
+}
+const next=()=>show((cur+1)%scenes.length);
+const start=()=>{ rebuildDots(); show(0); };
+if(document.fonts && document.fonts.ready){ document.fonts.ready.then(start); } else { start(); }
+</script>
+</body>
+</html>
