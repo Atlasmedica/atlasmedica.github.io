@@ -3,490 +3,546 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ATLASMEDICA — Le logiciel médical qui simplifie votre quotidien</title>
-<meta name="description" content="ATLASMEDICA : gestion de cabinet, téléconsultation et aide au diagnostic par IA. Conçu par des médecins pour des médecins. Démo gratuite 7 jours.">
+<title>ATLASMEDICA 2.0 — Le logiciel médical du cabinet, du rendez-vous à l'ordonnance</title>
+<meta name="description" content="ATLASMEDICA 2.0 : dossier patient, rendez-vous, consultation, ordonnance, certificats et statistiques dans une interface claire. Conçu pour les médecins et les secrétariats. Essai gratuit 7 jours.">
+<meta name="theme-color" content="#060a14">
+<meta property="og:title" content="ATLASMEDICA 2.0 — Le logiciel médical du cabinet">
+<meta property="og:description" content="Du démarrage à l'ordonnance : une interface apaisée pour le médecin et le secrétariat. Version 2.0 disponible.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/screenshots/tableau-de-bord.jpg">
+<link rel="canonical" href="https://atlasmedica.github.io/">
+<link rel="icon" href="assets/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
 <header class="nav" id="nav">
   <div class="container nav-inner">
-    <a href="#hero" class="logo">
-      <span class="logo-mark">A</span>
+    <a href="#top" class="logo" aria-label="ATLASMEDICA">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2.2-5 3.2 10 2.4-6H22"/></svg>
+      </span>
       <span class="logo-text">ATLAS<span>MEDICA</span></span>
     </a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#promo">Présentation</a>
-      <a href="#features">Fonctionnalités</a>
-      <a href="#tele">Téléconsultation</a>
-      <a href="#ia">IA</a>
-      <a href="#pricing">Tarifs</a>
+    <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+      <a href="#apercu">Aperçu</a>
+      <a href="#modules">Modules</a>
+      <a href="#nouveautes">Nouveautés 2.0</a>
+      <a href="#editions">Éditions</a>
+      <a href="#tarifs">Tarifs</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
       <a href="#contact" class="btn btn-primary">Demander une démo</a>
-      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="nav-burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
-<section class="hero" id="hero">
-  <div class="hero-bg">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="grid-lines"></div>
-  </div>
-  <div class="container hero-grid">
-    <div class="hero-content reveal">
-      <span class="badge">Nouvelle version <b>1.2.4</b></span>
-      <h1>Le logiciel médical qui <span class="grad-text">simplifie</span> votre quotidien</h1>
-      <p class="hero-sub">De la prise de rendez-vous à la prescription, téléconsultation et IA diagnostique incluses. Tout-en-un, conçu par des médecins pour des médecins.</p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary btn-lg">Essayez gratuitement 7 jours</a>
-        <a href="#pricing" class="btn btn-ghost btn-lg">Voir les offres</a>
-      </div>
-      <ul class="hero-trust">
-        <li><span class="dot"></span> Données stockées sur votre poste</li>
-        <li><span class="dot"></span> Installation accompagnée</li>
-        <li><span class="dot"></span> SAV dédié</li>
-      </ul>
-    </div>
+<main id="top">
 
-    <div class="hero-visual reveal">
-      <div class="mock">
-        <div class="mock-top">
-          <span class="mock-dot red"></span><span class="mock-dot yellow"></span><span class="mock-dot green"></span>
-          <span class="mock-title">ATLASMEDICA — Aperçu du logiciel</span>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="grid-lines"></div>
+    </div>
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <span class="badge"><span class="badge-dot"></span> Version 2.0 disponible</span>
+        <h1>Le cabinet médical, <span class="grad-text">en un seul regard</span>.</h1>
+        <p class="hero-sub">Dossier patient, rendez-vous, consultation, ordonnance. ATLASMEDICA réunit tout le quotidien du cabinet dans une interface calme, pensée pour le médecin comme pour le secrétariat.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary btn-lg">Essayer 7 jours gratuitement</a>
+          <a href="#apercu" class="btn btn-ghost btn-lg">Voir l'application</a>
         </div>
-        <img class="mock-img" src="assets/aff1.jpeg" alt="ATLASMEDICA — aperçu du logiciel">
-        <div class="float-chip f1"><span class="f-ico">🎥</span> Téléconsultation <b>en salle</b></div>
-        <div class="float-chip f2"><span class="f-ico">🤖</span> IA : diagnostic différentiel</div>
+        <ul class="hero-trust">
+          <li><span class="dot"></span> Données hébergées sur votre poste</li>
+          <li><span class="dot"></span> Installation accompagnée</li>
+          <li><span class="dot"></span> Interface français · العربية · English</li>
+        </ul>
       </div>
-      <div class="pulse-ring"></div>
-    </div>
-  </div>
-  <div class="marquee">
-    <div class="marquee-track">
-      <span>Médecine générale</span><b>•</b><span>Clinique</span><b>•</b><span>Polyclinique</span><b>•</b><span>Cabinet spécialisé</span><b>•</b><span>Groupe médical</span><b>•</b>
-      <span>Médecine générale</span><b>•</b><span>Clinique</span><b>•</b><span>Polyclinique</span><b>•</b><span>Cabinet spécialisé</span><b>•</b><span>Groupe médical</span><b>•</b>
-    </div>
-  </div>
-</section>
 
-<!-- ===== STATS ===== -->
-<section class="stats" id="stats">
-  <div class="container stats-grid reveal">
-    <div class="stat"><span class="stat-num" data-count="190">0</span><span class="stat-label">entrées base de connaissances</span></div>
-    <div class="stat"><span class="stat-num" data-count="15" data-suffix="+">0</span><span class="stat-label">arbres décisionnels</span></div>
-    <div class="stat"><span class="stat-num" data-count="24">0</span><span class="stat-label">scores cliniques</span></div>
-    <div class="stat"><span class="stat-num" data-count="3">0</span><span class="stat-label">langues d'interface</span></div>
-  </div>
-</section>
+      <div class="hero-visual reveal">
+        <figure class="window">
+          <div class="window-bar">
+            <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
+            <span class="window-title">AtlasMedica — Tableau de bord</span>
+          </div>
+          <img src="assets/screenshots/tableau-de-bord.jpg" width="1600" height="1000" alt="Tableau de bord AtlasMedica 2.0 : rendez-vous du jour, consultations et indicateurs du cabinet" fetchpriority="high">
+        </figure>
+        <div class="float-chip chip-a"><span class="chip-ico">💊</span> Ordonnance en deux clics</div>
+        <div class="float-chip chip-b"><span class="chip-ico">🎨</span> 18 palettes + couleurs libres</div>
+      </div>
+    </div>
 
-<!-- ===== PROMO ===== -->
-<section class="promo-sec" id="promo">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="kicker">Présentation</span>
-      <h2>ATLASMEDICA en <span class="grad-text">action</span></h2>
-      <p>Une minute de démonstration animée : cabinet, dossier patient, IA, téléconsultation et offres.</p>
+    <div class="container">
+      <div class="stats reveal" id="stats">
+        <div class="stat"><span class="stat-num" data-count="190">0</span><span class="stat-label">entrées de connaissance</span></div>
+        <div class="stat"><span class="stat-num" data-count="15" data-suffix="+">0</span><span class="stat-label">arbres décisionnels</span></div>
+        <div class="stat"><span class="stat-num" data-count="24">0</span><span class="stat-label">scores cliniques</span></div>
+        <div class="stat"><span class="stat-num" data-count="3">0</span><span class="stat-label">langues d'interface</span></div>
+      </div>
     </div>
-    <div class="promo-bar reveal">
-      <span class="ph">Séquence animée plein cadre · 1080p · 74 secondes</span>
-      <a href="promo.html" class="btn btn-ghost" target="_blank" rel="noopener">Ouvrir en plein écran ↗</a>
-    </div>
-    <div class="promo-frame reveal">
-      <iframe src="promo.html" title="Présentation ATLASMEDICA" loading="lazy" allowfullscreen></iframe>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== FEATURES ===== -->
-<section class="features" id="features">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="kicker">Fonctionnalités</span>
-      <h2>Tout votre cabinet, <span class="grad-text">en un seul outil</span></h2>
-      <p>Des modules conçus pour le flux réel d'une consultation, sans frictions.</p>
-    </div>
-    <div class="feat-grid">
-      <article class="feat reveal">
-        <span class="feat-ico" style="--c:#3b82f6">📅</span>
-        <h3>Rendez-vous & file d'attente</h3>
-        <p>Calendrier, agenda partagé, appel patient et gestion de l'attente en temps réel.</p>
-      </article>
-      <article class="feat reveal">
-        <span class="feat-ico" style="--c:#22d3ee">👥</span>
-        <h3>Dossier patient complet & QR Code</h3>
-        <p>Antécédents, intolérances, traitements en cours et résumé instantané par QR code patient.</p>
-      </article>
-      <article class="feat reveal">
-        <span class="feat-ico" style="--c:#8b5cf6">💊</span>
-        <h3>Prescriptions intelligentes</h3>
-        <p>Posologie, DCI, référentiel médicaments et ordonnance avec QR clinique.</p>
-      </article>
-      <article class="feat reveal">
-        <span class="feat-ico" style="--c:#34d399">🧾</span>
-        <h3>Certificats & comptes rendus</h3>
-        <p>Certificats médicaux, demandes, exploitations et modèles automatiques.</p>
-      </article>
-      <article class="feat reveal">
-        <span class="feat-ico" style="--c:#f59e0b">📊</span>
-        <h3>Scores & calculs cliniques</h3>
-        <p>EVA, Glasgow, CRB-65, clearance créatinine, DFG MDRD, HOMA-IR et plus.</p>
-      </article>
-      <article class="feat reveal">
-        <span class="feat-ico" style="--c:#f472b6">💰</span>
-        <h3>Facturation & statistiques</h3>
-        <p>Honoraires, paiements, rapports et statistiques financières avancées.</p>
-      </article>
-      <article class="feat reveal">
-        <span class="feat-ico" style="--c:#fb923c">🛡</span>
-        <h3>Sauvegarde MySQL locale</h3>
-        <p>Vos données restent chez vous. Sauvegarde / restauration en un clic.</p>
-      </article>
-      <article class="feat reveal">
-        <span class="feat-ico" style="--c:#60a5fa">🌍</span>
-        <h3>Multilingue & thème</h3>
-        <p>Français, arabe et plus, avec palette de couleurs personnalisable.</p>
-      </article>
-    </div>
-  </div>
-</section>
+  <!-- ===== APERCU ===== -->
+  <section class="section" id="apercu">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="kicker">Aperçu</span>
+        <h2>Du démarrage à <span class="grad-text">l'ordonnance</span></h2>
+        <p>Huit écrans réels, sans maquette : voilà le parcours d'une consultation dans ATLASMEDICA 2.0.</p>
+      </div>
 
-<!-- ===== TELECONSULTATION ===== -->
-<section class="split" id="tele">
-  <div class="container split-grid">
-    <div class="split-visual reveal">
-      <div class="tc-stage">
-        <div class="tc-frame">
-          <div class="tc-bar"><span class="tc-live"></span> Salle sécurisée</div>
-          <div class="tc-screen">
-            <div class="tc-video"></div>
-            <div class="tc-chat">
-              <span class="tc-msg">Bonjour Dr, j'ai des douleurs thoraciques…</span>
-              <span class="tc-msg own">Notez votre tension actuelle.</span>
-            </div>
+      <div class="gallery">
+        <button class="shot reveal" type="button" data-full="assets/screenshots/splash.jpg" data-caption="Démarrage — l'application se prépare en quelques secondes.">
+          <span class="shot-media"><img src="assets/screenshots/splash.jpg" width="1280" height="800" alt="Écran de démarrage d'AtlasMedica 2.0" loading="lazy"></span>
+          <span class="shot-meta"><span class="shot-step">01</span><span class="shot-text"><b>Démarrage</b><small>Une entrée en matière sobre et rapide.</small></span></span>
+        </button>
+
+        <button class="shot reveal" type="button" data-full="assets/screenshots/connexion.jpg" data-caption="Connexion — un espace sécurisé pour chaque membre du cabinet.">
+          <span class="shot-media"><img src="assets/screenshots/connexion.jpg" width="1600" height="1000" alt="Écran de connexion AtlasMedica" loading="lazy"></span>
+          <span class="shot-meta"><span class="shot-step">02</span><span class="shot-text"><b>Connexion</b><small>Accès sécurisé, langue et profil du cabinet.</small></span></span>
+        </button>
+
+        <button class="shot reveal" type="button" data-full="assets/screenshots/tableau-de-bord.jpg" data-caption="Tableau de bord — la journée du cabinet en un coup d'œil.">
+          <span class="shot-media"><img src="assets/screenshots/tableau-de-bord.jpg" width="1600" height="1000" alt="Tableau de bord AtlasMedica" loading="lazy"></span>
+          <span class="shot-meta"><span class="shot-step">03</span><span class="shot-text"><b>Tableau de bord</b><small>Rendez-vous du jour, activité et indicateurs.</small></span></span>
+        </button>
+
+        <button class="shot reveal" type="button" data-full="assets/screenshots/patients.jpg" data-caption="Patients — la liste du cabinet, le QR du patient et ses raccourcis.">
+          <span class="shot-media"><img src="assets/screenshots/patients.jpg" width="1600" height="1000" alt="Liste des patients avec la barre d'information et le QR code" loading="lazy"></span>
+          <span class="shot-meta"><span class="shot-step">04</span><span class="shot-text"><b>Patients</b><small>Recherche, filtres, QR code et dossier en un clic.</small></span></span>
+        </button>
+
+        <button class="shot reveal" type="button" data-full="assets/screenshots/dossier-patient.jpg" data-caption="Dossier patient — antécédents, médication, constantes et dernière consultation.">
+          <span class="shot-media"><img src="assets/screenshots/dossier-patient.jpg" width="1600" height="1000" alt="Fiche synthétique d'un patient : antécédents, médication, constantes" loading="lazy"></span>
+          <span class="shot-meta"><span class="shot-step">05</span><span class="shot-text"><b>Dossier patient</b><small>La synthèse complète, lisible en un regard.</small></span></span>
+        </button>
+
+        <button class="shot reveal" type="button" data-full="assets/screenshots/rendez-vous.jpg" data-caption="Rendez-vous — planning, statuts et salle d'attente en temps réel.">
+          <span class="shot-media"><img src="assets/screenshots/rendez-vous.jpg" width="1600" height="1000" alt="Planning des rendez-vous AtlasMedica" loading="lazy"></span>
+          <span class="shot-meta"><span class="shot-step">06</span><span class="shot-text"><b>Rendez-vous</b><small>Planning partagé et statuts mis à jour en direct.</small></span></span>
+        </button>
+
+        <button class="shot reveal" type="button" data-full="assets/screenshots/consultation.jpg" data-caption="Consultation — motif, examen, diagnostic et suivi dans un même formulaire.">
+          <span class="shot-media"><img src="assets/screenshots/consultation.jpg" width="1600" height="1000" alt="Formulaire de consultation AtlasMedica" loading="lazy"></span>
+          <span class="shot-meta"><span class="shot-step">07</span><span class="shot-text"><b>Consultation</b><small>Examen clinique, scores et antécédents réunis.</small></span></span>
+        </button>
+
+        <button class="shot reveal" type="button" data-full="assets/screenshots/ordonnance.jpg" data-caption="Ordonnance — le référentiel médicament, la posologie et l'impression.">
+          <span class="shot-media"><img src="assets/screenshots/ordonnance.jpg" width="1600" height="1000" alt="Onglet Prescriptions avec l'ordonnance du patient" loading="lazy"></span>
+          <span class="shot-meta"><span class="shot-step">08</span><span class="shot-text"><b>Ordonnance</b><small>Prescriptions, posologie et impression immédiate.</small></span></span>
+        </button>
+      </div>
+
+      <p class="gallery-note reveal">Chaque écran provient de l'application réelle, version 2.0. <a href="promo.html" target="_blank" rel="noopener">Voir la présentation animée ↗</a></p>
+    </div>
+  </section>
+
+  <!-- ===== MODULES ===== -->
+  <section class="section section-alt" id="modules">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="kicker">Modules</span>
+        <h2>Tout le cabinet, <span class="grad-text">sans dispersion</span></h2>
+        <p>Des modules qui suivent le flux réel d'une journée de consultation, du premier rendez-vous au compte rendu.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card reveal">
+          <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+          <h3>Dossier patient</h3>
+          <p>Antécédents, allergies, traitements en cours, constantes et QR code patient. Une synthèse claire à chaque ouverture.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></span>
+          <h3>Rendez-vous</h3>
+          <p>Agenda du jour, statuts, appel du patient et file d'attente. Le secrétariat et le médecin travaillent sur le même planning.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v4l3 6v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-7l3-6z"/><path d="M9 14h6"/></svg></span>
+          <h3>Consultation</h3>
+          <p>Motif, symptômes, examen, diagnostic, constantes et scores cliniques. Tout est enregistré au même endroit, sans double saisie.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3h4l1 3h4v15H5V6h4z"/><path d="M9 12h6M12 9v6"/></svg></span>
+          <h3>Ordonnance</h3>
+          <p>Référentiel médicaments, DCI, posologie et durée. Impression directe ou PDF, avec ou sans en-tête du cabinet.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h6M9 16h4M9 8h3"/></svg></span>
+          <h3>Certificats & comptes rendus</h3>
+          <p>Certificats médicaux, demandes, exploitations et modèles. Les documents se génèrent depuis le dossier, sans ressaisie.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></span>
+          <h3>Paiements & statistiques</h3>
+          <p>Honoraires, règlements, impayés et rapports d'activité. Les chiffres du mois se mettent à jour au fil des consultations.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5.4A8 8 0 1 1 21 12z"/></svg></span>
+          <h3>Messagerie interne</h3>
+          <p>Un canal simple entre le médecin et le secrétariat pour les appels, les urgences et les consignes du jour.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <h3>Sauvegardes</h3>
+          <p>Vos données restent chez vous. Sauvegarde et restauration en un clic, historique conservé sur le poste serveur.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span>
+          <h3>Langues & apparence</h3>
+          <p>Français, arabe et anglais. 18 palettes prédéfinies et 10 couleurs personnalisées pour adapter l'interface à votre cabinet.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONSULTATION ===== -->
+  <section class="section">
+    <div class="container split">
+      <div class="split-media reveal">
+        <figure class="window window-sm">
+          <div class="window-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="window-title">Consultation</span></div>
+          <img src="assets/screenshots/consultation.jpg" width="1600" height="1000" alt="Consultation : examen clinique, antécédents et prescriptions" loading="lazy">
+        </figure>
+      </div>
+      <div class="split-body reveal">
+        <span class="kicker">Consultation</span>
+        <h2>Une consultation qui suit <span class="grad-text">votre raisonnement</span></h2>
+        <p>Le dossier s'ouvre avec le patient déjà sélectionné. Vous saisissez le motif, l'examen et le diagnostic ; les antécédents, les constantes et les scores restent à portée de main.</p>
+        <ul class="check-list">
+          <li>Antécédents, allergies et traitements rappelés dans le formulaire</li>
+          <li>Constantes et scores cliniques enregistrés avec la consultation</li>
+          <li>Aide au diagnostic et red flags pour les cas ambigus</li>
+          <li>Compte rendu et certificats générés depuis la même fiche</li>
+        </ul>
+        <a href="#apercu" class="link-arrow">Revoir les écrans <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ORDONNANCE ===== -->
+  <section class="section section-alt">
+    <div class="container split split-reverse">
+      <div class="split-media reveal">
+        <figure class="window window-sm">
+          <div class="window-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="window-title">Ordonnance</span></div>
+          <img src="assets/screenshots/ordonnance.jpg" width="1600" height="1000" alt="Ordonnance : médicaments, posologie et impression" loading="lazy">
+        </figure>
+      </div>
+      <div class="split-body reveal">
+        <span class="kicker">Ordonnance</span>
+        <h2>L'ordonnance prête, <span class="grad-text">avant le patient</span></h2>
+        <p>Le référentiel médicament propose la forme, la posologie et la durée. L'ordonnance se remplit au fil de la consultation, puis s'imprime ou s'exporte en PDF.</p>
+        <ul class="check-list">
+          <li>Recherche par nom, DCI ou forme galénique</li>
+          <li>Posologies et durées proposées, modifiables en un geste</li>
+          <li>Reprise des médicaments en cours en un clic</li>
+          <li>Impression avec en-tête du cabinet ou PDF serveur</li>
+        </ul>
+        <a href="#contact" class="link-arrow">Demander une démonstration <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DOSSIER ===== -->
+  <section class="section">
+    <div class="container split">
+      <div class="split-media reveal">
+        <figure class="window window-sm">
+          <div class="window-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="window-title">Dossier patient</span></div>
+          <img src="assets/screenshots/dossier-patient.jpg" width="1600" height="1000" alt="Dossier patient : antécédents, médication, constantes et dernière consultation" loading="lazy">
+        </figure>
+      </div>
+      <div class="split-body reveal">
+        <span class="kicker">Dossier patient</span>
+        <h2>Le dossier complet, <span class="grad-text">lisible en un regard</span></h2>
+        <p>La fiche synthétique rassemble l'essentiel : antécédents, médicaments en cours, dernières constantes et dernière consultation. Plus besoin de parcourir des onglets pour retrouver une information.</p>
+        <ul class="check-list">
+          <li>Synthèse claire des antécédents et des allergies</li>
+          <li>Ordonnances datées et médicaments en cours</li>
+          <li>Courbe des constantes et historique des consultations</li>
+          <li>QR code patient pour un accès rapide au dossier</li>
+        </ul>
+        <a href="#apercu" class="link-arrow">Voir le dossier en grand <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOUVEAUTES 2.0 ===== -->
+  <section class="section section-alt" id="nouveautes">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="kicker">Version 2.0</span>
+        <h2>Ce qui change <span class="grad-text">au quotidien</span></h2>
+        <p>Une refonte de l'expérience, pas seulement des couleurs : l'interface a été repensée pour tenir sur tous les écrans et réduire les gestes inutiles.</p>
+      </div>
+      <div class="news-grid">
+        <article class="news reveal"><span class="news-num">01</span><h3>Interface apaisée</h3><p>Moins de bruit visuel, plus d'espace, une hiérarchie claire entre le dossier, le rendez-vous et la consultation.</p></article>
+        <article class="news reveal"><span class="news-num">02</span><h3>Fenêtre adaptative</h3><p>L'application s'ajuste à la résolution et à la mise à l'échelle de Windows, sans jamais dépasser le bas de l'écran.</p></article>
+        <article class="news reveal"><span class="news-num">03</span><h3>Sidebar rétractable</h3><p>Le menu se replie en un rail d'icônes et réapparaît au survol. Plus d'espace pour les tableaux et les formulaires.</p></article>
+        <article class="news reveal"><span class="news-num">04</span><h3>18 palettes + 10 couleurs</h3><p>Le bleu Atlas devient la palette de référence. Chaque cabinet peut composer la sienne et la retrouver au prochain lancement.</p></article>
+        <article class="news reveal"><span class="news-num">05</span><h3>Édition secrétaire</h3><p>Un binaire dédié au secrétariat : patients, rendez-vous, paiements et messagerie, avec les bons droits dès l'ouverture.</p></article>
+        <article class="news reveal"><span class="news-num">06</span><h3>Ordonnance pré-remplie</h3><p>Les traitements en cours et la posologie sont repris automatiquement, pour une ordonnance prête en deux clics.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDITIONS ===== -->
+  <section class="section" id="editions">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="kicker">Éditions</span>
+        <h2>Deux binaires, <span class="grad-text">un même cabinet</span></h2>
+        <p>Le médecin et le secrétariat partagent les mêmes données, chacun avec l'interface et les droits qui lui correspondent.</p>
+      </div>
+      <div class="editions">
+        <article class="edition reveal">
+          <div class="edition-head">
+            <span class="edition-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v4M16 3v4"/><rect x="4" y="7" width="16" height="14" rx="3"/><path d="M12 11v6M9 14h6"/></svg></span>
+            <div><h3>Édition Médecin</h3><p>Le poste de consultation complet.</p></div>
+          </div>
+          <ul class="check-list">
+            <li>Dossier patient, consultations et ordonnances</li>
+            <li>Certificats, scores et aide au diagnostic</li>
+            <li>Statistiques, sauvegardes et paramètres</li>
+            <li>Téléconsultation et messagerie du cabinet</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Demander une démo</a>
+        </article>
+        <article class="edition reveal">
+          <div class="edition-head">
+            <span class="edition-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M7 14h4M7 17h7"/></svg></span>
+            <div><h3>Édition Secrétaire</h3><p>L'accueil et le planning, sans surcharge.</p></div>
+          </div>
+          <ul class="check-list">
+            <li>Accueil des patients et création de dossier</li>
+            <li>Rendez-vous, statuts et salle d'attente</li>
+            <li>Paiements, impayés et encaissements</li>
+            <li>Messagerie interne avec le médecin</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost">Découvrir l'édition</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TARIFS ===== -->
+  <section class="section section-alt" id="tarifs">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="kicker">Tarifs</span>
+        <h2>Une offre pour <span class="grad-text">chaque structure</span></h2>
+        <p>Sans engagement. L'essai de 7 jours ouvre toutes les fonctionnalités.</p>
+      </div>
+      <div class="price-grid">
+        <article class="price reveal">
+          <h3>BASE</h3>
+          <p class="price-desc">L'essentiel pour démarrer</p>
+          <div class="price-num"><small>Sur devis</small></div>
+          <ul>
+            <li>Patients & consultations</li>
+            <li>Rendez-vous & calendrier</li>
+            <li>Prescriptions simples</li>
+            <li>Honoraires & paiements</li>
+            <li>Sauvegarde / restauration</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Choisir BASE</a>
+        </article>
+        <article class="price featured reveal">
+          <span class="price-badge">Recommandé</span>
+          <h3>EXTRA</h3>
+          <p class="price-desc">Pour le cabinet avec équipe</p>
+          <div class="price-num">10 000 <small>DA / mois</small></div>
+          <ul>
+            <li>Tout BASE</li>
+            <li>Thème & multilangue</li>
+            <li>Certificats & scores cliniques</li>
+            <li>Référentiel et prescriptions DCI</li>
+            <li>QR patient, file d'attente, stats</li>
+            <li>Aide au diagnostic & téléconsultation</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Choisir EXTRA</a>
+        </article>
+        <article class="price reveal">
+          <h3>FULL OPTION</h3>
+          <p class="price-desc">Pour la clinique</p>
+          <div class="price-num">20 000 <small>DA / mois</small></div>
+          <ul>
+            <li>Tout EXTRA</li>
+            <li>Multi-utilisateurs & rôles</li>
+            <li>Permissions granulaires</li>
+            <li>Ordonnance QR clinique</li>
+            <li>Statistiques financières avancées</li>
+            <li>Support 24/7 + formation 2 jours</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Choisir FULL OPTION</a>
+        </article>
+        <article class="price reveal">
+          <h3>LICENCE À VIE</h3>
+          <p class="price-desc">Achat unique, sans abonnement</p>
+          <div class="price-num">100 000 <small>DA unique</small></div>
+          <ul>
+            <li>Tout FULL OPTION</li>
+            <li>Mises à jour à vie</li>
+            <li>Migration des données incluse</li>
+            <li>SAV & assistance prioritaire</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Choisir la licence</a>
+        </article>
+        <article class="price dark-card reveal">
+          <h3>FULL CONTROL</h3>
+          <p class="price-desc">Clé en main sur mesure</p>
+          <div class="price-num">120 000 <small>DA unique</small></div>
+          <ul>
+            <li>Tout FULL OPTION</li>
+            <li>Licence définitive + mises à jour</li>
+            <li>Site web personnalisé + domaine</li>
+            <li>RDV en ligne pour vos patients</li>
+            <li>Formation approfondie (5 jours)</li>
+          </ul>
+          <a href="#contact" class="btn btn-gradient">Choisir FULL CONTROL</a>
+        </article>
+      </div>
+      <div class="trial-cta reveal">
+        <div>
+          <h3>Testez ATLASMEDICA 2.0 pendant 7 jours</h3>
+          <p>Toutes les fonctionnalités FULL OPTION, sans engagement et sans carte bancaire.</p>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-lg">Lancer l'essai</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq">
+    <div class="container container-narrow">
+      <div class="sec-head reveal">
+        <span class="kicker">FAQ</span>
+        <h2>Questions <span class="grad-text">fréquentes</span></h2>
+      </div>
+      <div class="faq-list reveal">
+        <details>
+          <summary>Où sont stockées mes données ?</summary>
+          <p>Sur votre propre poste serveur. Vous gardez le contrôle total et pouvez sauvegarder ou restaurer en un clic, sans dépendre d'un service extérieur.</p>
+        </details>
+        <details>
+          <summary>Y a-t-il une période d'essai ?</summary>
+          <p>Oui, 7 jours gratuits avec toutes les fonctionnalités FULL OPTION, sans carte bancaire. Vos données sont conservées si vous souscrivez.</p>
+        </details>
+        <details>
+          <summary>Quelle est la différence entre les éditions Médecin et Secrétaire ?</summary>
+          <p>Les deux partagent les mêmes données. L'édition Médecin ouvre la consultation, les ordonnances et les statistiques ; l'édition Secrétaire se concentre sur l'accueil, les rendez-vous et les paiements.</p>
+        </details>
+        <details>
+          <summary>L'application s'adapte-t-elle à mon écran ?</summary>
+          <p>Oui. La fenêtre se dimensionne sur la zone utile de l'écran et tient compte de la mise à l'échelle de Windows. La version 2.0 corrige les débordements sur les écrans 1366×768 et 1024×768.</p>
+        </details>
+        <details>
+          <summary>L'IA remplace-t-elle mon jugement ?</summary>
+          <p>Non. C'est une aide à la réflexion clinique : elle propose un diagnostic différentiel argumenté, signale les red flags et rappelle qu'elle ne remplace pas le praticien.</p>
+        </details>
+        <details>
+          <summary>Mes patients doivent-ils installer un logiciel pour la téléconsultation ?</summary>
+          <p>Non. Ils ouvrent simplement le lien de la salle dans leur navigateur.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section section-alt" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info reveal">
+        <span class="kicker">Contact</span>
+        <h2>Parlons de <span class="grad-text">votre cabinet</span></h2>
+        <p>Dites-nous votre structure : nous vous proposons l'offre adaptée et une démonstration personnalisée de la version 2.0.</p>
+        <ul class="contact-list">
+          <li><span class="c-ico" aria-hidden="true">✉</span> atlasmedica.group@gmail.com</li>
+          <li><span class="c-ico" aria-hidden="true">◷</span> Réponse sous 24 h ouvrées</li>
+          <li><span class="c-ico" aria-hidden="true">✓</span> Accompagnement à l'installation</li>
+        </ul>
+        <a class="btn btn-whatsapp" id="waInline" href="#" rel="noopener">Discuter sur WhatsApp</a>
+      </div>
+      <form class="contact-form reveal" id="contactForm" name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact">
+        <div class="field">
+          <label for="cname">Nom complet</label>
+          <input id="cname" name="nom" type="text" placeholder="Dr …" required>
+        </div>
+        <div class="field">
+          <label for="cemail">Email</label>
+          <input id="cemail" name="email" type="email" placeholder="vous@cabinet.dz" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="cphone">Téléphone</label>
+            <input id="cphone" name="telephone" type="tel" placeholder="05 XX XX XX XX">
+          </div>
+          <div class="field">
+            <label for="coffer">Offre</label>
+            <select id="coffer" name="offre">
+              <option>EXTRA</option>
+              <option>FULL OPTION</option>
+              <option>LICENCE À VIE</option>
+              <option>FULL CONTROL</option>
+              <option>Essai 7 jours</option>
+              <option>Édition Secrétaire</option>
+            </select>
           </div>
         </div>
-        <div class="tc-badge">🔗 Lien unique par consultation</div>
-      </div>
-    </div>
-    <div class="split-content reveal">
-      <span class="kicker">Téléconsultation</span>
-      <h2>Consultez à distance, <span class="grad-text">sans friction</span></h2>
-      <p>Générez une salle de visioconférence en un clic et invitez votre patient par <strong>email, SMS ou WhatsApp</strong>.</p>
-      <ul class="check-list">
-        <li>Salle sécurisée avec lien unique par consultation</li>
-        <li>Contexte clinique transmis : motif, constantes, antécédents</li>
-        <li>Compte-rendu de téléconsultation rattaché au dossier patient</li>
-        <li>Aucune installation pour le patient : il ouvre le lien dans son navigateur</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ===== IA ===== -->
-<section class="split split-reverse" id="ia">
-  <div class="container split-grid">
-    <div class="split-content reveal">
-      <span class="kicker">Aide au diagnostic</span>
-      <h2>L'IA comme <span class="grad-text">second avis</span></h2>
-      <p>Moteur interne (TF-IDF + Bayes) sur plus de 190 entrées CIM-10, complété optionnellement par <strong>DeepSeek</strong> pour un diagnostic différentiel argumenté.</p>
-      <ul class="check-list">
-        <li>Suggestions locales instantanées : diagnostics, signes, codes CIM-10</li>
-        <li>Diagnostic différentiel avec probabilités et arguments pour/contre</li>
-        <li>Red flags et examens complémentaires à envisager</li>
-        <li>Anonymisation des données — rien ne quitte votre poste sans votre accord</li>
-      </ul>
-    </div>
-    <div class="split-visual reveal">
-      <div class="ia-stage">
-        <div class="ia-card">
-          <div class="ia-head">🤖 Analyse IA <span class="ia-pill">deepseek</span></div>
-          <div class="ia-line"><b>Diagnostic différentiel</b></div>
-          <div class="ia-row"><span class="ia-pct" style="--w:72%">Syndrome grippal — 72%</span></div>
-          <div class="ia-row"><span class="ia-pct" style="--w:21%">Infection ORL — 21%</span></div>
-          <div class="ia-row"><span class="ia-pct" style="--w:7%">Autres — 7%</span></div>
-          <div class="ia-alert">⚠ Red flag : vérifier la persistance > 7 jours</div>
-        </div>
-        <div class="ia-badge">190+ entrées décisionnelles</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PRICING ===== -->
-<section class="pricing" id="pricing">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="kicker">Tarifs</span>
-      <h2>Une offre pour <span class="grad-text">chaque structure</span></h2>
-    </div>
-    <div class="price-grid">
-      <article class="price reveal">
-        <h3>BASE</h3>
-        <p class="price-desc">Essentiel pour démarrer</p>
-        <div class="price-num"><small>Sur devis</small></div>
-        <ul>
-          <li>Patients & consultations</li>
-          <li>Rendez-vous & calendrier</li>
-          <li>Prescriptions simples</li>
-          <li>Honoraires & paiements</li>
-          <li>Sauvegarde / restauration</li>
-        </ul>
-        <a href="#contact" class="btn btn-outline">Choisir BASE</a>
-      </article>
-
-      <article class="price featured reveal">
-        <span class="price-badge">Recommandé</span>
-        <h3>EXTRA</h3>
-        <p class="price-desc">Pour cabinet avec équipe</p>
-        <div class="price-num">10 000 <small>DA / mois</small></div>
-        <ul>
-          <li>Tout BASE</li>
-          <li>Thème & multilangue</li>
-          <li>Certificats médicaux</li>
-          <li>Scores cliniques (EVA, Glasgow…)</li>
-          <li>Référentiel + prescriptions DCI</li>
-          <li>QR patient, file d'attente, stats</li>
-          <li>Aide au diagnostic & téléconsultation</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary">Choisir EXTRA</a>
-      </article>
-
-      <article class="price reveal">
-        <h3>FULL OPTION</h3>
-        <p class="price-desc">Pour clinique ou polyclinique</p>
-        <div class="price-num">20 000 <small>DA / mois</small></div>
-        <ul>
-          <li>Tout EXTRA</li>
-          <li>Multi-utilisateurs & rôles</li>
-          <li>Permissions granulaires</li>
-          <li>Ordonnance QR clinique</li>
-          <li>Statistiques financières avancées</li>
-          <li>Intégration laboratoire</li>
-          <li>Support 24/7 + formation 2 jours</li>
-        </ul>
-        <a href="#contact" class="btn btn-outline">Choisir FULL OPTION</a>
-      </article>
-
-      <article class="price reveal">
-        <h3>LICENCE À VIE</h3>
-        <p class="price-desc">Achat unique, sans abonnement</p>
-        <div class="price-num">100 000 <small>DA unique</small></div>
-        <ul>
-          <li>Tout FULL OPTION</li>
-          <li>Mises à jour à vie</li>
-          <li>Migration des données incluse</li>
-          <li>SAV & assistance prioritaire</li>
-        </ul>
-        <a href="#contact" class="btn btn-outline">Choisir la licence</a>
-      </article>
-
-      <article class="price dark-card reveal">
-        <h3>FULL CONTROL</h3>
-        <p class="price-desc">Clé en main sur mesure</p>
-        <div class="price-num">120 000 <small>DA unique</small></div>
-        <ul>
-          <li>Tout FULL OPTION</li>
-          <li>Licence définitive + mises à jour à vie</li>
-          <li>Site web personnalisé + domaine</li>
-          <li>RDV en ligne pour vos patients</li>
-          <li>Personnalisation logo & charte</li>
-          <li>Formation approfondie (5 jours)</li>
-        </ul>
-        <a href="#contact" class="btn btn-gradient">Choisir FULL CONTROL</a>
-      </article>
-    </div>
-
-    <div class="trial-cta reveal">
-      <div>
-        <h3>Testez gratuitement pendant 7 jours</h3>
-        <p>Toutes les fonctionnalités FULL OPTION, sans engagement et sans carte bancaire.</p>
-      </div>
-      <a href="#contact" class="btn btn-primary btn-lg">Lancer l'essai</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== COMPARISON ===== -->
-<section class="compare" id="compare">
-  <div class="container reveal">
-    <div class="sec-head">
-      <h2>Comparatif <span class="grad-text">détaillé</span></h2>
-    </div>
-    <div class="table-wrap">
-      <table class="comp-table">
-        <thead>
-          <tr>
-            <th>Fonctionnalité</th><th>BASE</th><th>EXTRA</th><th>FULL OPTION</th><th>LICENCE À VIE</th><th>FULL CONTROL</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Fiche patient, QR Code & consultations</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
-          <tr><td>Rendez-vous & calendrier</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
-          <tr class="g"><td>Thème & multilangue</td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
-          <tr class="g"><td>Certificats & scores cliniques</td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
-          <tr class="g"><td>Référentiel & prescriptions DCI</td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
-          <tr class="g"><td>QR patient & file d'attente</td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
-          <tr class="g"><td><b>IA diagnostique & téléconsultation</b></td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
-          <tr class="p"><td>Multi-utilisateurs & rôles</td><td>—</td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
-          <tr class="p"><td>Ordonnance QR clinique</td><td>—</td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
-          <tr class="p"><td>Stats financières & intégration labo</td><td>—</td><td>—</td><td class="on">✓</td><td class="on">✓</td><td class="on">✓</td></tr>
-          <tr><td>Licence définitive (achat unique)</td><td>—</td><td>—</td><td>—</td><td class="on">✓</td><td class="on">✓</td></tr>
-          <tr><td>Mises à jour à vie</td><td>—</td><td>—</td><td>—</td><td class="on">✓</td><td class="on">✓</td></tr>
-          <tr><td>Site web + RDV en ligne</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="on">✓</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ===== TESTIMONIALS ===== -->
-<section class="testi" id="testimonials">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="kicker">Ils nous font confiance</span>
-      <h2>Pensé par des médecins, <span class="grad-text">approuvé par des médecins</span></h2>
-    </div>
-    <div class="testi-grid">
-      <blockquote class="reveal">
-        <p>« Je rédige mes ordonnances et certificats en deux minutes. La file d'attente a transformé ma salle d'attente. »</p>
-        <footer><b>Dr A. Bensaïd</b><span>Médecin généraliste — Alger</span></footer>
-      </blockquote>
-      <blockquote class="reveal">
-        <p>« La téléconsultation a sauvé mon suivi pendant les pics d'afflux. Mes patients ouvrent le lien sans rien installer. »</p>
-        <footer><b>Dr K. Mansouri</b><span>Médecin de famille — Oran</span></footer>
-      </blockquote>
-      <blockquote class="reveal">
-        <p>« L'IA me donne un second avis structuré avant de conclure. Un vrai gain pour les cas ambigus. »</p>
-        <footer><b>Dr S. Cherif</b><span>Généraliste — Constantine</span></footer>
-      </blockquote>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FAQ ===== -->
-<section class="faq" id="faq">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="kicker">FAQ</span>
-      <h2>Questions <span class="grad-text">fréquentes</span></h2>
-    </div>
-    <div class="faq-list reveal">
-      <details>
-        <summary>Où sont stockées mes données ?</summary>
-        <p>Sur votre propre poste (MySQL local). Vous gardez le contrôle total et pouvez sauvegarder ou restaurer en un clic.</p>
-      </details>
-      <details>
-        <summary>Y a-t-il une période d'essai ?</summary>
-        <p>Oui, 7 jours gratuits avec toutes les fonctionnalités FULL OPTION, sans carte bancaire. Vos données sont migrées si vous souscrivez.</p>
-      </details>
-      <details>
-        <summary>L'IA remplace-t-elle mon jugement ?</summary>
-        <p>Non. C'est une aide à la réflexion clinique : elle propose un différentiel argumenté, signale les red flags et rappelle qu'elle ne remplace pas le praticien.</p>
-      </details>
-      <details>
-        <summary>Est-ce que mes patients doivent installer un logiciel pour la téléconsultation ?</summary>
-        <p>Non. Ils ouvrent simplement le lien de la salle dans leur navigateur (Jitsi).</p>
-      </details>
-      <details>
-        <summary>Quelle offre choisir pour une clinique ?</summary>
-        <p>FULL OPTION (multi-utilisateurs, rôles et permissions) ou FULL CONTROL si vous voulez aussi un site web avec RDV en ligne.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CONTACT ===== -->
-<section class="contact" id="contact">
-  <div class="container contact-grid">
-    <div class="contact-info reveal">
-      <span class="kicker">Contact</span>
-      <h2>Parlons de <span class="grad-text">votre cabinet</span></h2>
-      <p>Dites-nous votre structure, on vous propose l'offre adaptée et une démo personnalisée.</p>
-      <ul class="contact-list">
-        <li><span class="c-ico">✉️</span> atlasmedica.group@gmail.com</li>
-        <li><span class="c-ico">💬</span> Réponse sous 24h ouvrées</li>
-        <li><span class="c-ico">🛡</span> Accompagnement à l'installation</li>
-      </ul>
-    </div>
-    <form class="contact-form reveal" id="contactForm" name="contact" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="contact">
-      <div class="field">
-        <label for="cname">Nom complet</label>
-        <input id="cname" name="nom" type="text" placeholder="Dr …" required>
-      </div>
-      <div class="field">
-        <label for="cemail">Email</label>
-        <input id="cemail" name="email" type="email" placeholder="vous@cabinet.dz" required>
-      </div>
-      <div class="field-row">
         <div class="field">
-          <label for="cphone">Téléphone</label>
-          <input id="cphone" name="telephone" type="tel" placeholder="05 XX XX XX XX">
+          <label for="cmsg">Message</label>
+          <textarea id="cmsg" name="message" rows="4" placeholder="Parlez-nous de votre cabinet…"></textarea>
         </div>
-        <div class="field">
-          <label for="coffer">Offre</label>
-          <select id="coffer" name="offre">
-            <option>EXTRA</option>
-            <option>FULL OPTION</option>
-            <option>LICENCE À VIE</option>
-            <option>FULL CONTROL</option>
-            <option>Essai 7 jours</option>
-          </select>
-        </div>
-      </div>
-      <div class="field">
-        <label for="cmsg">Message</label>
-        <textarea id="cmsg" name="message" rows="4" placeholder="Parlez-nous de votre projet…"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary btn-lg btn-block">Envoyer la demande</button>
-      <p class="form-ok" id="formOk">✓ Merci ! Nous revenons vers vous sous 24h.</p>
-    </form>
-  </div>
-</section>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Envoyer la demande</button>
+        <p class="form-ok" id="formOk">✓ Merci ! Nous revenons vers vous sous 24 h.</p>
+      </form>
+    </div>
+  </section>
 
-<!-- ===== FOOTER ===== -->
+</main>
+
 <footer class="footer">
   <div class="container footer-grid">
-    <div>
-      <a href="#hero" class="logo"><span class="logo-mark">A</span><span class="logo-text">ATLAS<span>MEDICA</span></span></a>
-      <p>Le logiciel médical tout-en-un pour les médecins algériens. Téléconsultation, IA diagnostique et gestion complète de cabinet.</p>
+    <div class="footer-brand">
+      <a href="#top" class="logo"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2.2-5 3.2 10 2.4-6H22"/></svg></span><span class="logo-text">ATLAS<span>MEDICA</span></span></a>
+      <p>Le logiciel médical du cabinet, du rendez-vous à l'ordonnance. Conçu en Algérie, pour les médecins et les secrétariats.</p>
     </div>
     <div class="footer-col">
       <h4>Produit</h4>
-      <a href="#features">Fonctionnalités</a>
-      <a href="#tele">Téléconsultation</a>
-      <a href="#ia">IA diagnostique</a>
-      <a href="#pricing">Tarifs</a>
+      <a href="#apercu">Aperçu</a>
+      <a href="#modules">Modules</a>
+      <a href="#nouveautes">Nouveautés 2.0</a>
+      <a href="#tarifs">Tarifs</a>
     </div>
     <div class="footer-col">
       <h4>Entreprise</h4>
-      <a href="#testimonials">Témoignages</a>
+      <a href="#editions">Éditions</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
+      <a href="promo.html" target="_blank" rel="noopener">Présentation animée</a>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
       <a href="mailto:atlasmedica.group@gmail.com">atlasmedica.group@gmail.com</a>
       <span>Algérie — assistance à distance</span>
+      <a href="https://wa.me/213770871850" rel="noopener" target="_blank">WhatsApp</a>
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© 2026 ATLASMEDICA (atlasmedica.health) — Tous droits réservés.</span>
-    <span>Version 1.2.4</span>
+    <span>© 2026 ATLASMEDICA — Tous droits réservés.</span>
+    <span class="footer-version">Version 2.0</span>
   </div>
 </footer>
 
-<script src="script.js"></script>
-<!-- ===== WHATSAPP FLOATING ===== -->
 <a href="#" class="wa-float" id="waBtn" aria-label="Discuter sur WhatsApp">
   <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true">
     <path d="M16.04 3C8.94 3 3.19 8.75 3.19 15.85c0 2.35.68 4.62 1.97 6.6L3.05 29l6.68-1.75a12.9 12.9 0 0 0 6.3 1.61h.01c7.09 0 12.85-5.75 12.85-12.85 0-3.43-1.34-6.66-3.76-9.09A12.76 12.76 0 0 0 16.04 3Zm0 23.62h-.01c-2.02 0-4-.54-5.74-1.57l-.41-.24-3.96 1.04 1.06-3.86-.27-.43a10.62 10.62 0 0 1-1.63-5.71C5.08 9.9 10 5 16.04 5c3.12 0 6.05 1.22 8.26 3.43a11.72 11.72 0 0 1 3.42 8.27c-.01 6.05-4.93 10.92-9.68 10.92Zm5.62-8.2c-.31-.16-1.83-.9-2.12-1.01-.28-.11-.49-.16-.7.16-.2.31-.79 1.01-.97 1.21-.18.2-.36.23-.67.08-.31-.16-1.31-.48-2.5-1.54a9.34 9.34 0 0 1-1.73-2.15c-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.21-.31.31-.51.1-.2.05-.38-.03-.53-.08-.16-.7-1.68-.95-2.3-.25-.6-.51-.52-.7-.53h-.6c-.2 0-.53.08-.81.38-.28.31-1.06 1.04-1.06 2.53s1.08 2.93 1.24 3.14c.15.2 2.13 3.26 5.17 4.57.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.83-.75 2.09-1.47.25-.72.25-1.34.18-1.47-.08-.13-.28-.21-.59-.37Z"/>
@@ -494,5 +550,12 @@
   <span class="wa-tip">Discuter sur WhatsApp</span>
 </a>
 
+<dialog class="lightbox" id="lightbox" aria-label="Aperçu de la capture">
+  <button class="lightbox-close" type="button" id="lightboxClose" aria-label="Fermer">×</button>
+  <img id="lightboxImg" src="" alt="">
+  <p class="lightbox-caption" id="lightboxCaption"></p>
+</dialog>
+
+<script src="script.js"></script>
 </body>
 </html>
