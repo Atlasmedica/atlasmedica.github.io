@@ -76,7 +76,7 @@ function initCounters(){
 function initWhatsapp(){
   const msg = 'Bonjour ATLASMEDICA, je souhaite des informations sur vos offres.';
   const href = 'https://wa.me/213770871850?text=' + encodeURIComponent(msg);
-  ['waBtn', 'waInline'].forEach((id) => {
+  ['waBtn', 'waInline', 'formWa'].forEach((id) => {
     const el = document.getElementById(id);
     if(el){ el.href = href; el.target = '_blank'; el.rel = 'noopener'; }
   });
@@ -112,35 +112,65 @@ function initLightbox(){
   dlg.addEventListener('click', (e) => { if(e.target === dlg) close(); });
 }
 
-/* Contact form (Netlify Forms) */
+/* Contact form — FormSubmit (CORS ouvert, sans dependance a l'hebergeur).
+   Le jour ou un script maison est disponible (PHP sur un .dz/.com, API),
+   il suffit de remplacer FORM_ENDPOINT par son URL : le reste ne change pas. */
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/atlasmedica.group@gmail.com';
+
 function initForm(){
   const form = document.getElementById('contactForm');
   const ok = document.getElementById('formOk');
+  const err = document.getElementById('formErr');
   if(!form) return;
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    // Champ piege rempli par les robots : on ignore la soumission.
+    const honey = form.querySelector('[name="_honey"]');
+    if(honey && honey.value) return;
+
     const btn = form.querySelector('button[type=submit]');
     const original = btn.textContent;
     btn.textContent = 'Envoi en cours…';
-    btn.style.pointerEvents = 'none';
+    btn.disabled = true;
+    if(ok) ok.classList.remove('show');
+    if(err) err.classList.remove('show');
+
+    const payload = Object.assign(Object.fromEntries(new FormData(form).entries()), {
+      _subject: 'Nouvelle demande - site AtlasMedica',
+      _template: 'table',
+      _captcha: 'false',
+      _honey: ''
+    });
+
     try {
-      const resp = await fetch('https://atlasmedica.netlify.app/', {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 15000);
+      const resp = await fetch(FORM_ENDPOINT, {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: ctrl.signal
       });
-      if(!resp.ok) throw new Error('Erreur serveur');
+      clearTimeout(timer);
+      const result = await resp.json().catch(() => ({}));
+      if(!resp.ok || String(result.success) === 'false'){
+        throw new Error(result.message || 'Erreur serveur');
+      }
       btn.textContent = '✓ Message envoyé !';
       if(ok) ok.classList.add('show');
       form.reset();
-    } catch(err) {
+    } catch(error) {
       btn.textContent = '✗ Échec. Réessayez.';
+      if(err) err.classList.add('show');
     }
+
     setTimeout(() => {
       btn.textContent = original;
-      btn.style.pointerEvents = '';
+      btn.disabled = false;
       if(ok) ok.classList.remove('show');
-    }, 4000);
+      if(err) err.classList.remove('show');
+    }, 6000);
   });
 }
 

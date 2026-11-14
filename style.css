@@ -445,6 +445,11 @@ button { font: inherit; color: inherit; }
 }
 .form-ok { display: none; margin-top: 0.9rem; color: var(--green); font-size: 0.88rem; }
 .form-ok.show { display: block; }
+.form-err { display: none; margin-top: 0.9rem; color: #f87171; font-size: 0.88rem; line-height: 1.5; }
+.form-err.show { display: block; }
+.form-err a { color: inherit; text-decoration: underline; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.contact-form .btn:disabled { opacity: 0.65; cursor: progress; }
 
 /* ---------------------------------------------------------------- Footer */
 .footer { padding: 4rem 0 2rem; border-top: 1px solid var(--border); background: rgba(4, 8, 16, 0.6); }
