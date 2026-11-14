@@ -44,8 +44,8 @@ formulaire statique qui accepte les requêtes cross-origin (CORS) : il
 fonctionne donc sur GitHub Pages comme sur n'importe quel hébergeur `.dz` ou
 `.com`, sans backend.
 
-- La première soumission déclenche un email d'activation à
-  `atlasmedica.group@gmail.com` : cliquer sur « Activate Form » une seule fois.
+- Formulaire **activé** (email « Activate Form » validé le 14/11/2026) ; test
+  réel depuis la page en ligne : message de succès affiché, aucune erreur console.
 - L'adresse et l'endpoint sont définis par la constante `FORM_ENDPOINT` en
   haut de `script.js`.
 - Un champ piège `_honey` et `_captcha: false` limitent le spam.
