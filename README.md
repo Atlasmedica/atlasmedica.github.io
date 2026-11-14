@@ -16,10 +16,11 @@ Site statique de présentation d'ATLASMEDICA 2.0 (GitHub Pages) :
 
 ## Captures d'écran
 
-Les neuf images de `assets/screenshots/` proviennent de l'application réelle
+Les dix images de `assets/screenshots/` proviennent de l'application réelle
 (rendu 1600×1000, splash 1280×800). La galerie de la page d'accueil en affiche
 huit (grille de 2 colonnes) ; `consultations.jpg` reste disponible dans le
-dossier. Elles suivent le parcours d'une consultation :
+dossier et `mode-clair.jpg` illustre la section « Mode clair ». Elles suivent
+le parcours d'une consultation :
 
 1. `splash.jpg` — démarrage
 2. `connexion.jpg` — connexion
@@ -30,6 +31,7 @@ dossier. Elles suivent le parcours d'une consultation :
 7. `consultations.jpg` — historique
 8. `consultation.jpg` — dossier clinique
 9. `ordonnance.jpg` — prescriptions
+10. `mode-clair.jpg` — tableau de bord en thème clair (section « Mode clair »)
 
 Pour les remplacer : capturer la fenêtre de l'application, redimensionner en
 1600×1000 (JPEG qualité ~92) et conserver les mêmes noms de fichiers.
