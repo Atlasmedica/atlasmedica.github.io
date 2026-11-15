@@ -384,6 +384,11 @@ button { font: inherit; color: inherit; }
 .edition-ico svg { width: 23px; height: 23px; }
 .edition-head h3 { font-size: 1.18rem; }
 .edition-head p { color: var(--muted); font-size: 0.9rem; margin-top: 0.15rem; }
+.console-shot {
+  display: block; width: 100%; height: auto; margin-bottom: 1.4rem;
+  border-radius: var(--radius-sm); border: 1px solid var(--border);
+  background: #0a1020; box-shadow: 0 20px 50px -34px rgba(2, 8, 23, 0.9);
+}
 .edition .btn { margin-top: auto; align-self: flex-start; }
 .edition .check-list { margin-bottom: 1.8rem; }
 
